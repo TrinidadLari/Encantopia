@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Encantopía</title>
+	</head>
+	<body>
+		<main>
+			<nav>
+				<h1>Hadas</h1>
+				<div>
+					<button class="hidden">MENU HAMBURGUESA</button>
+				</div>
+				<div>
+					<button>MODO OSCURO</button>
+					<button>AGREGAR HADA</button>
+					<button>CARRUSEL</button>
+				</div>
+			</nav>
+			<div class="searchDiv">
+				<h3>Filtrar</h3>
+				<form>
+					<select name="" id="pepe">
+						<option value="Tipo de Hada...">Tipo de Hada...</option>
+						<option value="Náyades">Náyades</option>
+						<option value="Nereida">Nereida</option>
+						<option value="Ondinas">Ondinas</option>
+						<option value=""></option>
+						<option value=""></option>
+						<option value=""></option>
+						<option value=""></option>
+						<option value=""></option>
+						<option value=""></option>
+						<option value=""></option>
+						<option value=""></option>
+					</select>
+
+					<select name="" id="">
+						<option value="Elemento...">Elemento...</option>
+						<option value="Agua">Agua</option>
+						<option value="Tierra">Tierra</option>
+						<option value="Fuego">Fuego</option>
+						<option value="Aire">Aire</option>
+					</select>
+					<select name="" id="">
+						<option value="Color...">Color...</option>
+						<option value="Turqueza">Turqueza</option>
+						<option value="Verde">Verde</option>
+						<option value="Verde-Azulado">Verde-Azulado</option>
+						<option value=""></option>
+						<option value=""></option>
+						<option value=""></option>
+					</select>
+					<div>
+						<button>BUSCAR</button>
+						<button>LIMPIAR</button>
+					</div>
+				</form>
+			</div>
+
+			<div class="spinnerBox hidden" id="spinnerBox">
+				<img src="../assets/svg/tadpole.svg" alt="Cargando" />
+			</div>
+
+			<div class="cardsBox" id="cardsBox">
+				<!-- <div class="cardBox">
+					<h2 class="fairyName">${nombre}</h2>
+					<img src="${imagen}" alt="Imágen del Hada" class="fairyImg" />
+					<button class="cardBtn__detail" data-cardid="${id}">
+						Ver detalles
+					</button>
+				</div> -->
+			</div>
+			<!-- <div class="cardDetail hidden">
+				<div class="cardImg">
+					<img src="${imagen}" alt="Imágen de Hada" class="fairyImg" />
+				</div>
+				<div class="cardText">
+					<h2 class="fairyName">${nombre}</h2>
+					<p class="fairyKind">Tipo de Hada: ${tipoDeHada}</p>
+					<p class="fairyElement">Elemento: ${elemento}</p>
+					<p class="failyColor">${color}</p>
+					<p class="fairyImmortality">${inmortalidad}</p>
+					<p class="failySignify">${significado}</p>
+				</div>
+				<div class="cardBtn">
+					<button class="cardBtn__edit" data-cardid="${id}">Editar</button>
+					<button class="cardBtn__delete" data-cardid="${id}">Eliminar</button>
+				</div>
+			</div> -->
+			<!-- <form id="cardEdit" class="hidden">
+				<label for="nameInput">Nombre</label>
+				<input type="text" name="" id="nameInput" />
+				<label for="kindInput">Tipo de Hada</label>
+				<input type="text" name="" id="kindInput" />
+				<label for="elementInput">Elemento</label>
+				<input type="text" name="" id="elementInput" />
+				<label for="colorInput">Color</label>
+				<input type="text" name="" id="colorInput" />
+				<label for="inmortalInput">Inmortal?</label>
+				<input type="checkbox" name="" id="inmortalInput" />
+				<label for="signifyInput">Significado</label>
+				<input type="text" name="" id="signifyInput" />
+				<button class="cardBtn__return" data-cardid="${id}">Volver</button>
+				<input type="submit" value="Editar" />
+			</form> -->
+		</main>
+	</body>
+</html>
