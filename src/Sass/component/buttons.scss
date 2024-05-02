@@ -1,6 +1,6 @@
 button {
 	background-color: $secondary-color;
-	width: 200px;
+	width: 100px;
 	height: 30px;
 	border-radius: 6px;
 	box-shadow: $shadow-light;
@@ -11,4 +11,21 @@ button {
 	font-weight: 800;
 	font-style: normal;
 	font-size: 20px;
+	//margin-top: 10px;
+
+	@include md() {
+		width: 180px;
+	}
+
+	@include md-max() {
+		width: 250px;
+		height: 35px;
+		font-size: 25px;
+	}
+}
+
+.cardBtn__detail {
+	width: 200px;
+	margin-inline: auto;
+	background-color: $details-color;
 }

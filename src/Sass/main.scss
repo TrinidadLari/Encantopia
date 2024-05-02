@@ -3,6 +3,8 @@
 @import "base/font.scss";
 @import "base/reset.scss";
 @import "base/responsive.scss";
+//UTILS
+@import "utils/mixins.scss";
 //COMPONENT
 @import "component/buttons.scss";
 //LAYOUT
@@ -11,5 +13,3 @@
 @import "layout/footer.scss";
 @import "layout/body.scss";
 @import "layout/header.scss";
-//UTILS
-@import "utils/mixins.scss";

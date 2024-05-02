@@ -1,10 +1,71 @@
 .searchDiv {
-	height: 10vh;
+	height: 20vh;
 	background-color: $details-color;
-	opacity: 0.5;
 	box-shadow: $shadow-dark;
 	position: fixed;
 	top: 100px;
 	width: 100%;
-	padding-right: 50px;
+
+	@include md() {
+		height: 10vh;
+	}
+}
+
+.searchDiv {
+	display: flex;
+	h3 {
+		margin-inline: 20px;
+		margin-top: 10px;
+		font-size: 25px;
+		font-family: "Cormorant SC", serif;
+	}
+
+	@include md() {
+		justify-content: space-around;
+		align-items: center;
+	}
+}
+
+.searchForm {
+	display: flex;
+	flex-direction: row;
+
+	@include md() {
+		gap: 100px;
+	}
+}
+
+.searchBtn {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	margin-right: 10px;
+	justify-content: center;
+
+	@include md() {
+		flex-direction: row;
+	}
+}
+
+select {
+	background-color: $font-color-light;
+	width: 90px;
+	height: 30px;
+	border-radius: 3px;
+	box-shadow: $shadow-light;
+	border: none;
+	color: $font-color-dark;
+	margin-block: 5px;
+	font-size: 10px;
+
+	@include md() {
+		width: 150px;
+		font-size: 16px;
+	}
+
+	@include md-max() {
+		width: 220px;
+		height: 35px;
+		font-size: 20px;
+	}
 }
