@@ -1,0 +1,24 @@
+nav {
+	background-color: $main-color;
+	display: flex;
+	justify-content: space-between;
+	//gap: 100px;
+	width: 100%;
+	height: 70px;
+	padding-top: 30px;
+
+	h1 {
+		font-family: "Cormorant SC", serif;
+		font-optical-sizing: auto;
+		font-weight: weight;
+		font-style: normal;
+		font-size: 46px;
+		padding-left: 48px;
+	}
+}
+
+.nav_btns {
+	display: flex;
+	gap: 50px;
+	margin-right: 48px;
+}

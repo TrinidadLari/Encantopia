@@ -1,0 +1,10 @@
+.searchDiv {
+	height: 10vh;
+	background-color: $details-color;
+	opacity: 0.5;
+	box-shadow: $shadow-dark;
+	position: fixed;
+	top: 100px;
+	width: 100%;
+	padding-right: 50px;
+}

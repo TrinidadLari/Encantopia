@@ -1,0 +1,14 @@
+button {
+	background-color: $secondary-color;
+	width: 200px;
+	height: 30px;
+	border-radius: 6px;
+	box-shadow: $shadow-light;
+	border: none;
+	color: $font-color-dark;
+	font-family: "Cormorant SC", serif;
+	font-optical-sizing: auto;
+	font-weight: 800;
+	font-style: normal;
+	font-size: 20px;
+}
