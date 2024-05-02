@@ -12,8 +12,8 @@
 }
 
 button {
-  background-color: rgb(144, 210, 109);
-  width: 200px;
+  background-color: rgb(155, 190, 135);
+  width: 100px;
   height: 30px;
   border-radius: 6px;
   box-shadow: 0px 3px 8px 3px rgb(108, 105, 105);
@@ -25,28 +25,126 @@ button {
   font-style: normal;
   font-size: 20px;
 }
+@media (min-width: 970px) {
+  button {
+    width: 180px;
+  }
+}
+@media (min-width: 1200px) {
+  button {
+    width: 250px;
+    height: 35px;
+    font-size: 25px;
+  }
+}
+
+.cardBtn__detail {
+  width: 200px;
+  margin-inline: auto;
+  background-color: rgb(255, 152, 0);
+}
 
 nav {
   background-color: rgb(44, 120, 101);
-  display: flex;
-  justify-content: space-between;
   width: 100%;
-  height: 70px;
-  padding-top: 30px;
+  padding-top: 20px;
+  position: fixed;
+  top: 0;
+  box-shadow: 0px 3px 8px 3px rgb(28, 27, 27);
 }
 nav h1 {
   font-family: "Cormorant SC", serif;
-  font-optical-sizing: auto;
-  font-weight: weight;
-  font-style: normal;
   font-size: 46px;
   padding-left: 48px;
 }
+@media (min-width: 970px) {
+  nav {
+    display: flex;
+    justify-content: space-between;
+  }
+}
 
 .nav_btns {
+  display: none;
+}
+@media (min-width: 970px) {
+  .nav_btns {
+    display: flex;
+    gap: 50px;
+    margin-right: 48px;
+  }
+}
+
+.cardsBox {
+  width: 80%;
+  margin-top: 250px;
+  border: 2px solid black;
+  border-radius: 20px;
+  padding: 20px;
+  margin-inline: 10%;
+}
+@media (min-width: 970px) {
+  .cardsBox {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 400px);
+    gap: 30px;
+    overflow-y: auto;
+    background-image: url(https://images.pexels.com/photos/19874112/pexels-photo-19874112/free-photo-of-naturaleza-bosque-arboles-profundo.jpeg?auto=compress&cs=tinysrgb&w=600);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+@media (min-width: 1200px) {
+  .cardsBox {
+    grid-template-rows: repeat(3, 700px);
+  }
+}
+
+.cardBox {
+  border: 2px solid black;
+  border-radius: 10px;
+  width: 100%;
+  height: 400px;
+  padding: 15px;
   display: flex;
-  gap: 50px;
-  margin-right: 48px;
+  flex-direction: column;
+  gap: 20px;
+  background-color: rgb(155, 190, 135);
+  margin-bottom: 10px;
+}
+.cardBox h2 {
+  font-family: "Cormorant SC", serif;
+  font-size: 36px;
+  margin-inline: auto;
+}
+@media (min-width: 970px) {
+  .cardBox {
+    height: 400px;
+  }
+}
+@media (min-width: 1200px) {
+  .cardBox {
+    height: 700px;
+  }
+}
+
+.cardDetail {
+  border: 2px solid black;
+  border-radius: 10px;
+  width: 70%;
+  padding: 15px;
+  display: grid;
+  grid-template-columns: 120px auto;
+  gap: 20px;
+}
+
+.fairyImg {
+  width: 100%;
+}
+
+.fairyName {
+  margin-bottom: 20px;
 }
 
 body {
@@ -57,14 +155,81 @@ body {
 }
 
 .searchDiv {
-  height: 10vh;
+  height: 20vh;
   background-color: rgb(255, 152, 0);
-  opacity: 0.5;
   box-shadow: 0px 3px 8px 3px rgb(28, 27, 27);
   position: fixed;
   top: 100px;
   width: 100%;
-  padding-right: 50px;
+}
+@media (min-width: 970px) {
+  .searchDiv {
+    height: 10vh;
+  }
+}
+
+.searchDiv {
+  display: flex;
+}
+.searchDiv h3 {
+  margin-inline: 20px;
+  margin-top: 10px;
+  font-size: 25px;
+  font-family: "Cormorant SC", serif;
+}
+@media (min-width: 970px) {
+  .searchDiv {
+    justify-content: space-around;
+    align-items: center;
+  }
+}
+
+.searchForm {
+  display: flex;
+  flex-direction: row;
+}
+@media (min-width: 970px) {
+  .searchForm {
+    gap: 100px;
+  }
+}
+
+.searchBtn {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-right: 10px;
+  justify-content: center;
+}
+@media (min-width: 970px) {
+  .searchBtn {
+    flex-direction: row;
+  }
+}
+
+select {
+  background-color: rgb(202, 209, 192);
+  width: 90px;
+  height: 30px;
+  border-radius: 3px;
+  box-shadow: 0px 3px 8px 3px rgb(108, 105, 105);
+  border: none;
+  color: rgb(17, 53, 44);
+  margin-block: 5px;
+  font-size: 10px;
+}
+@media (min-width: 970px) {
+  select {
+    width: 150px;
+    font-size: 16px;
+  }
+}
+@media (min-width: 1200px) {
+  select {
+    width: 220px;
+    height: 35px;
+    font-size: 20px;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

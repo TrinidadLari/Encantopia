@@ -1,0 +1,68 @@
+.cardsBox {
+	width: 80%;
+	margin-top: 250px;
+	border: 2px solid black;
+	border-radius: 20px;
+	padding: 20px;
+	margin-inline: 10%;
+
+	@include md() {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		grid-template-rows: repeat(3, 400px);
+		gap: 30px;
+		overflow-y: auto;
+		background-image: url(https://images.pexels.com/photos/19874112/pexels-photo-19874112/free-photo-of-naturaleza-bosque-arboles-profundo.jpeg?auto=compress&cs=tinysrgb&w=600);
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+
+	@include md-max() {
+		grid-template-rows: repeat(3, 700px);
+	}
+}
+
+.cardBox {
+	border: 2px solid black;
+	border-radius: 10px;
+	width: 100%;
+	height: 400px;
+	padding: 15px;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	background-color: $secondary-color;
+	margin-bottom: 10px;
+
+	h2 {
+		font-family: "Cormorant SC", serif;
+		font-size: 36px;
+		margin-inline: auto;
+	}
+
+	@include md() {
+		height: 400px;
+	}
+
+	@include md-max() {
+		height: 700px;
+	}
+}
+
+.cardDetail {
+	border: 2px solid black;
+	border-radius: 10px;
+	width: 70%;
+	padding: 15px;
+	display: grid;
+	grid-template-columns: 120px auto;
+	gap: 20px;
+}
+
+.fairyImg {
+	width: 100%;
+}
+
+.fairyName {
+	margin-bottom: 20px;
+}

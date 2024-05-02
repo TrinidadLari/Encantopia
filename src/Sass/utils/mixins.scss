@@ -1,0 +1,11 @@
+@mixin md() {
+	@media (min-width: 970px) {
+		@content;
+	}
+}
+
+@mixin md-max() {
+	@media (min-width: 1200px) {
+		@content;
+	}
+}
