@@ -24,11 +24,12 @@ const showFaily = (hadas) => {
 		hideSpinner();
 		$("#cardsBox").innerHTML = "";
 		hadas.forEach((hada) => {
-			const { nombre, id, imagen } = hada;
+			const { nombre, id, imagen, elemento } = hada;
 
 			$("#cardsBox").innerHTML += `
         <div class="cardBox">
 					<h2 class="fairyName">${nombre}</h2>
+          <h4 class="fairyElement">${elemento}</h4>
 					<img src="${imagen}" alt="Imágen del Hada" class="fairyImg" />
 					<button class="cardBtn__detail" data-cardid="${id}">
 						Ver detalles
@@ -59,6 +60,7 @@ console.log(hideSpinner);
 const clickBtn__detail = (btns) => {
 	btns.forEach((btn) =>
 		btn.addEventListener("click", () => {
+			//mostrarDetalleAHada(btn.dataset.cardid);
 			getFailyDetails(btn.dataset.cardid);
 		})
 	);
@@ -69,11 +71,11 @@ const clickBtn__detail = (btns) => {
 const getFailyDetails = (id) => {
 	fetch(`${urlApi}/${id}`)
 		.then((res) => res.json())
-		.then((data) => console.log(data))
+		.then((data) => mostrarDetalleAHada(data))
 		.catch((err) => console.log(err));
 };
 
-//MOSTRAR DETALLES DE HADAS
+// //MOSTRAR DETALLES DE HADAS
 
 const mostrarDetalleAHada = (hada) => {
 	showSpinner();
@@ -82,19 +84,11 @@ const mostrarDetalleAHada = (hada) => {
 		hideSpinner();
 		$("#cardsBox").innerHTML = "";
 
-		const {
-			nombre,
-			id,
-			tipoDeHada,
-			elemento,
-			color,
-			imagen,
-			inmortalidad,
-			significado,
-		} = hada;
+		const { nombre, id, tipoDeHada, elemento, color, imagen, origen, mensaje } =
+			hada;
 
 		$("#cardsBox").innerHTML = `
-        	<div class="cardDetail hidden">
+        	<div id="cardDetail" class="cardDetail hidden">
 				<div class="cardImg">
 					<img src="${imagen}" alt="Imágen de Hada" class="fairyImg" />
 				</div>
@@ -103,8 +97,8 @@ const mostrarDetalleAHada = (hada) => {
 					<p class="fairyKind">Tipo de Hada: ${tipoDeHada}</p>
 					<p class="fairyElement">Elemento: ${elemento}</p>
 					<p class="failyColor">${color}</p>
-					<p class="fairyImmortality">${inmortalidad}</p>
-					<p class="failySignify">${significado}</p>
+					<p class="fairyImmortality">${origen}</p>
+					<p class="failySignify">${mensaje}</p>
 				</div>
 				<div class="cardBtn">
 					<button class="cardBtn__edit" data-cardid="${id}">Editar</button>
@@ -112,7 +106,7 @@ const mostrarDetalleAHada = (hada) => {
           <button class="cardBtn__return" data-cardid="${id}">Volver</button>
 				</div>
 			</div>
-      
+
       			<form id="cardEdit" class="hidden">
 				<label for="nameInput">Nombre</label>
 				<input type="text" name="" id="nameInput" />
@@ -121,33 +115,47 @@ const mostrarDetalleAHada = (hada) => {
 				<label for="elementInput">Elemento</label>
 				<input type="text" name="" id="elementInput" />
 				<label for="colorInput">Color</label>
-				<input type="text" name="" id="colorInput" />
-				<label for="inmortalInput">Inmortal?</label>
-				<input type="checkbox" name="" id="inmortalInput" />
-				<label for="signifyInput">Significado</label>
-				<input type="text" name="" id="signifyInput" />
+				<input type="color" name="" id="colorInput" />
+				<label for="originInput">Origen</label>
+				<input type="checkbox" name="" id="originInput" />
+				<label for="messageInput">Mensaje</label>
+				<input type="text" name="" id="messageInput" />
 				<button class="cardBtn__return" data-cardid="${id}">Volver</button>
-				<input type="submit" value="Editar" />
+				<input type="submit" class="confirmEdit__btn" value="Editar" />
 			</form>
+
+      <div class="confirmDelete__modal hidden">
+        <p>Estás seguro que deseas borrar la información de la alumna?</p>
+
+        <button id="confirmDelete__btn" data-cardId="${id}">Eliminar Alumna</button>
+        <button id="cancelDelete__btn">Cancelar</button>
+      </div>
 			`;
 
 		//funcion regresar
 
-		$$(".cardBtn__return").addEventListener("click", () => getFaily(urlApi));
+		$(".cardBtn__return").addEventListener("click", () => {
+			console.log("clickReturn");
+			getFaily(urlApi);
+		});
 
-		$("#cardEdit").addEventListener("click", () => showCardEdit(hada));
+		//$("#cardEdit").addEventListener("click", () => showCardEdit(hada));
+		$(".cardBtn__edit").addEventListener("click", () => {
+			console.log("clickEdit");
+			$("#cardDetail").classList.add("hidden");
+			showCardEdit();
+		});
 
 		//Mostrar Form Editar Hada
 
 		const showCardEdit = (hada) => {
+			$("#cardEdit").classList.remove("hidden");
 			$("#nameInput").value = hada.nombre;
 			$("#kindInput").value = hada.tipoDeHada;
 			$("#elementInput").value = hada.elemento;
 			$("#colorInput").value = hada.color;
-			$("#inmortalInput").value = hada.inmortalidad;
-			$("#signifyInput").value = hada.significado;
-
-			$("#cardEdit").classList.remove("hidden");
+			$("#originInput").value = hada.inmortalidad;
+			$("#messageInput").value = hada.significado;
 		};
 		console.log(showCardEdit);
 	}, 2000);

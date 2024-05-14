@@ -16,7 +16,7 @@ button {
   width: 100px;
   height: 30px;
   border-radius: 6px;
-  box-shadow: 0px 3px 8px 3px rgb(108, 105, 105);
+  box-shadow: 0px 1px 8px 1px rgb(180, 176, 176);
   border: none;
   color: rgb(17, 53, 44);
   font-family: "Cormorant SC", serif;
@@ -47,15 +47,20 @@ button {
 nav {
   background-color: rgb(44, 120, 101);
   width: 100%;
-  padding-top: 20px;
+  padding-block: 20px;
   position: fixed;
   top: 0;
-  box-shadow: 0px 3px 8px 3px rgb(28, 27, 27);
+  box-shadow: 0px 1px 16px 1px rgb(58, 57, 57);
 }
 nav h1 {
   font-family: "Cormorant SC", serif;
-  font-size: 46px;
+  font-size: 34px;
   padding-left: 48px;
+}
+@media (min-width: 970px) {
+  nav h1 {
+    font-size: 48px;
+  }
 }
 @media (min-width: 970px) {
   nav {
@@ -76,9 +81,12 @@ nav h1 {
 }
 
 .cardsBox {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 30px;
+  overflow-y: auto;
   width: 80%;
-  margin-top: 250px;
-  border: 2px solid black;
+  margin-top: 270px;
   border-radius: 20px;
   padding: 20px;
   margin-inline: 10%;
@@ -87,29 +95,23 @@ nav h1 {
   .cardsBox {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 400px);
-    gap: 30px;
-    overflow-y: auto;
-    background-image: url(https://images.pexels.com/photos/19874112/pexels-photo-19874112/free-photo-of-naturaleza-bosque-arboles-profundo.jpeg?auto=compress&cs=tinysrgb&w=600);
-    background-repeat: no-repeat;
-    background-size: cover;
   }
 }
 @media (min-width: 1200px) {
   .cardsBox {
-    grid-template-rows: repeat(3, 700px);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
 .cardBox {
-  border: 2px solid black;
+  box-shadow: 0px 1px 16px 1px rgb(58, 57, 57);
   border-radius: 10px;
   width: 100%;
-  height: 400px;
   padding: 15px;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 15px;
   background-color: rgb(155, 190, 135);
   margin-bottom: 10px;
 }
@@ -119,47 +121,70 @@ nav h1 {
   margin-inline: auto;
 }
 @media (min-width: 970px) {
-  .cardBox {
-    height: 400px;
+  .cardBox h2 {
+    font-size: 42px;
   }
 }
 @media (min-width: 1200px) {
-  .cardBox {
-    height: 700px;
+  .cardBox h2 {
+    font-size: 50px;
   }
 }
 
-.cardDetail {
-  border: 2px solid black;
+.fairyElement {
+  font-family: "Cormorant SC", serif;
+  font-size: 20px;
+  margin-inline: auto;
+}
+@media (min-width: 970px) {
+  .fairyElement {
+    font-size: 28px;
+  }
+}
+@media (min-width: 1200px) {
+  .fairyElement {
+    font-size: 36px;
+  }
+}
+
+#cardDetail {
+  box-shadow: 0px 1px 16px 1px rgb(58, 57, 57);
   border-radius: 10px;
-  width: 70%;
+  width: 95%;
   padding: 15px;
-  display: grid;
-  grid-template-columns: 120px auto;
-  gap: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.cardBtn {
+  display: flex;
+  flex-direction: column;
+  margin-inline: auto;
+  gap: 10px;
+}
+@media (min-width: 970px) {
+  .cardBtn {
+    flex-direction: row;
+    gap: 20px;
+  }
 }
 
 .fairyImg {
   width: 100%;
 }
 
-.fairyName {
-  margin-bottom: 20px;
-}
-
 body {
   background-color: rgb(44, 120, 101);
   align-items: center;
   height: 100vh;
-  padding-block: auto;
 }
 
 .searchDiv {
-  height: 20vh;
-  background-color: rgb(255, 152, 0);
-  box-shadow: 0px 3px 8px 3px rgb(28, 27, 27);
+  background: linear-gradient(180deg, rgb(122, 69, 44) 0%, rgb(199, 122, 21) 49%, rgb(122, 69, 44) 100%);
+  box-shadow: 0px 1px 16px 1px rgb(58, 57, 57);
   position: fixed;
-  top: 100px;
+  top: 120px;
   width: 100%;
 }
 @media (min-width: 970px) {
@@ -212,7 +237,7 @@ select {
   width: 90px;
   height: 30px;
   border-radius: 3px;
-  box-shadow: 0px 3px 8px 3px rgb(108, 105, 105);
+  box-shadow: 0px 1px 8px 1px rgb(180, 176, 176);
   border: none;
   color: rgb(17, 53, 44);
   margin-block: 5px;

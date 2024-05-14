@@ -1,9 +1,16 @@
 .searchDiv {
-	height: 20vh;
-	background-color: $details-color;
+	//height: 20vh;
+	// background-color: $details-color;
+	// background: rgb(2,0,36);
+	background: linear-gradient(
+		180deg,
+		rgba(122, 69, 44, 1) 0%,
+		rgba(199, 122, 21, 1) 49%,
+		rgba(122, 69, 44, 1) 100%
+	);
 	box-shadow: $shadow-dark;
 	position: fixed;
-	top: 100px;
+	top: 120px;
 	width: 100%;
 
 	@include md() {
