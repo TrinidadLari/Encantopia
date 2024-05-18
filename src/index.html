@@ -24,7 +24,7 @@
 				<form class="searchForm">
 					<div class="searchSelect">
 						<select name="" id="">
-							<option value="Tipo de Hada...">Tipo de Hada...</option>
+							<option value="Acción...">Acción...</option>
 							<option value="Náyades">Náyades</option>
 							<option value="Nereida">Nereida</option>
 							<option value="Ondinas">Ondinas</option>
@@ -47,7 +47,7 @@
 							<option value="Alma">Alma</option>
 						</select>
 						<select name="" id="">
-							<option value="Origen...">Origen...</option>
+							<option value="Color...">Color...</option>
 							<option value="Terrestre">Terrestre</option>
 							<option value="Interdimensional">Interdimensional</option>
 						</select>
@@ -59,7 +59,7 @@
 				</form>
 			</div>
 
-			<div class="spinnerBox hidden" id="spinnerBox">
+			<div class="hidden" id="spinnerBox">
 				<img src="../assets/svg/tadpole.svg" alt="Cargando" />
 			</div>
 
@@ -72,7 +72,8 @@
 					</button>
 				</div> -->
 			</div>
-			<!-- <div class="cardDetail hidden">
+
+			<!-- <div id="cardDetail" class="hidden">
 				<div class="cardImg">
 					<img src="${imagen}" alt="Imágen de Hada" class="fairyImg" />
 				</div>
@@ -81,32 +82,35 @@
 					<p class="fairyKind">Tipo de Hada: ${tipoDeHada}</p>
 					<p class="fairyElement">Elemento: ${elemento}</p>
 					<p class="failyColor">${color}</p>
-					<p class="fairyImmortality">${inmortalidad}</p>
-					<p class="failySignify">${significado}</p>
+					<p class="fairyImmortality">${origen}</p>
+					<p class="failySignify">${mensaje}</p>
 				</div>
 				<div class="cardBtn">
 					<button class="cardBtn__edit" data-cardid="${id}">Editar</button>
 					<button class="cardBtn__delete" data-cardid="${id}">Eliminar</button>
+					<button class="cardBtn__return" data-cardid="${id}">Volver</button>
 				</div>
+
+				<form id="cardEdit" class="hidden">
+					<label for="nameInput">Nombre</label>
+					<input type="text" name="" id="nameInput" />
+					<label for="kindInput">Tipo de Hada</label>
+					<input type="text" name="" id="kindInput" />
+					<label for="elementInput">Elemento</label>
+					<input type="text" name="" id="elementInput" />
+					<label for="colorInput">Color</label>
+					<input type="color" name="" id="colorInput" />
+					<label for="originInput">Origen</label>
+					<input type="checkbox" name="" id="originInput" />
+					<label for="messageInput">Mensaje</label>
+					<input type="text" name="" id="messageInput" />
+					<button class="cardBtn__return" data-cardid="${id}">Volver</button>
+					<input type="submit" class="confirmEdit__btn" value="Editar" />
+				</form>
 			</div> -->
-			<!-- <form id="cardEdit" class="hidden">
-				<label for="nameInput">Nombre</label>
-				<input type="text" name="" id="nameInput" />
-				<label for="kindInput">Tipo de Hada</label>
-				<input type="text" name="" id="kindInput" />
-				<label for="elementInput">Elemento</label>
-				<input type="text" name="" id="elementInput" />
-				<label for="colorInput">Color</label>
-				<input type="text" name="" id="colorInput" />
-				<label for="inmortalInput">Inmortal?</label>
-				<input type="checkbox" name="" id="inmortalInput" />
-				<label for="signifyInput">Significado</label>
-				<input type="text" name="" id="signifyInput" />
-				<button class="cardBtn__return" data-cardid="${id}">Volver</button>
-				<input type="submit" value="Editar" />
-			</form> -->
 		</main>
 	</body>
 
 	<script src="js/main.js"></script>
+	<script src="js/put.js"></script>
 </html>

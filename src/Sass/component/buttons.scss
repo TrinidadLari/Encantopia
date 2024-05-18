@@ -1,6 +1,7 @@
 button {
 	background-color: $secondary-color;
-	width: 100px;
+	//flex: 0 0 25%;
+	//width: 50%;
 	height: 30px;
 	border-radius: 6px;
 	box-shadow: $shadow-light;
@@ -14,14 +15,18 @@ button {
 	//margin-top: 10px;
 
 	@include md() {
-		width: 180px;
+		//width: 25%;
 	}
 
 	@include md-max() {
-		width: 250px;
-		height: 35px;
+		//width: 200px;
+		//height: 35px;
 		font-size: 25px;
 	}
+}
+
+#cardBtn {
+	width: 50%;
 }
 
 .cardBtn__detail {
