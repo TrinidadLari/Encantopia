@@ -1,7 +1,6 @@
-.cardsBox {
+#cardsBox {
 	display: grid;
 	grid-template-columns: repeat(1, 1fr);
-	//grid-template-columns: 120px auto;
 	gap: 30px;
 	overflow-y: auto;
 	width: 80%;
@@ -21,7 +20,7 @@
 	}
 }
 
-.cardBox {
+#cardBox {
 	box-shadow: $shadow-dark;
 	border-radius: 10px;
 	width: 100%;
@@ -62,18 +61,16 @@
 }
 
 #cardDetail {
-	//border: 2px solid black;
 	box-shadow: $shadow-dark;
 	border-radius: 10px;
 	width: 95%;
 	padding: 15px;
 	display: flex;
 	flex-direction: column;
-	//grid-template-columns: 120px auto;
 	gap: 15px;
 }
 
-.cardBtn {
+#cardBtn {
 	display: flex;
 	flex-direction: column;
 	margin-inline: auto;
