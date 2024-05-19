@@ -40,16 +40,16 @@ const showDetailsFaily = (hada) => {
 				<form id="cardEdit" class="hidden">
 					<label for="nameInput">Nombre</label>
 					<input type="text" name="" id="nameInput" />
-					<label for="kindInput">Acción</label>
-					<input type="text" name="" id="kindInput" />
+					<label for="verbInput">Acción</label>
+					<input type="text" name="" id="verbInput" />
 					<label for="elementInput">Elemento</label>
 					<input type="text" name="" id="elementInput" />
 					<label for="colorInput">Color</label>
 					<input type="text" name="" id="colorInput" />
 					<label for="messageInput">Mensaje</label>
-					<input type="text" name="" id="messageInput" />
+          <textarea name="" id="messageInput"></textarea>
 					<button class="cardBtn__return" data-cardid="${id}">Volver</button>
-					<input type="submit" class="confirmEdit__btn" value="Editar" />
+					<input type="submit" class="button" id="confirmEdit__btn" value="Editar" />
 				</form>
 			</div>
 
@@ -80,7 +80,7 @@ const showDetailsFaily = (hada) => {
 			$("#cardBtn").classList.add("hidden");
 			$("#cardEdit").classList.remove("hidden");
 			$("#nameInput").value = hada.nombre;
-			$("#kindInput").value = hada.verbo;
+			$("#verbInput").value = hada.verbo;
 			$("#elementInput").value = hada.elemento;
 			$("#colorInput").value = hada.color;
 			$("#messageInput").value = hada.mensaje;
@@ -90,7 +90,7 @@ const showDetailsFaily = (hada) => {
 			const failyEdited = {
 				...hada,
 				nombre: $("#nameInput").value,
-				verbo: $("#kindInput").value,
+				verbo: $("#verbInput").value,
 				elemento: $("#elementInput").value,
 				color: $("#colorInput").value,
 				mensaje: $("#messageInput").value,

@@ -16,7 +16,7 @@
 				<div class="nav_btns">
 					<button>MENSAJE</button>
 					<button>ORÁCULO</button>
-					<button>AGREGAR HADA</button>
+					<button id="addNewFaily">AGREGAR HADA</button>
 				</div>
 			</nav>
 			<div class="searchDiv">
@@ -63,15 +63,46 @@
 				<img src="../assets/svg/tadpole.svg" alt="Cargando" />
 			</div>
 
-			<div class="cardsBox" id="cardsBox">
-				<!-- <div class="cardBox">
+			<div class="cardsBox" id="cardsBox"></div>
+			<div id="cardNewFaily" class="hidden">
+				<form id="cardNewFaily__form">
+					<label for="imgUpload__url" class="imgUpload__title"
+						>URL imagen</label
+					>
+					<input
+						type="text"
+						class="imgUpload__url"
+						id="imgUpload__url"
+						aria-label="URL de imagen"
+					/>
+					<label for="nameInput__newF">Nombre</label>
+					<input type="text" name="" id="nameInput__newF" />
+					<label for="verbInput__newF">Acción</label>
+					<input type="text" name="" id="verbInput__newF" />
+					<label for="elementInput__newF">Elemento</label>
+					<input type="text" name="" id="elementInput__newF" />
+					<label for="colorInput__newF">Color</label>
+					<input type="text" name="" id="colorInput__newF" />
+					<label for="messageInput__newF">Mensaje</label>
+					<textarea name="" id="messageInput__newF"></textarea>
+					<button class="cardBtnReturn__newF" data-cardid="${id}">
+						Cancelar
+					</button>
+					<input
+						type="submit"
+						class="button"
+						id="confirmNewFaily__btn"
+						value="Crear"
+					/>
+				</form>
+			</div>
+			<!-- <div class="cardBox">
 					<h2 class="fairyName">${nombre}</h2>
 					<img src="${imagen}" alt="Imágen del Hada" class="fairyImg" />
 					<button class="cardBtn__detail" data-cardid="${id}">
 						Ver detalles
 					</button>
 				</div> -->
-			</div>
 
 			<!-- <div id="cardDetail" class="hidden">
 				<div class="cardImg">
@@ -113,4 +144,5 @@
 
 	<script src="js/main.js"></script>
 	<script src="js/put.js"></script>
+	<script src="js/post.js"></script>
 </html>
