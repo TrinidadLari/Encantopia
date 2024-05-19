@@ -11,6 +11,10 @@
   display: none;
 }
 
+.flex {
+  display: flex;
+}
+
 button {
   background-color: rgb(155, 190, 135);
   height: 30px;

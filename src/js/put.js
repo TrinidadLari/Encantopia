@@ -4,7 +4,7 @@ const getFailyDetails = (id) => {
 	fetch(`${urlApi}/${id}`)
 		.then((res) => res.json())
 		.then((data) => showDetailsFaily(data))
-		.catch((err) => console.log(err));
+		.catch((err) => alert("Ocurrió el siguiente error:" + err));
 };
 
 // //MOSTRAR DETALLES DE HADAS
@@ -33,7 +33,7 @@ const showDetailsFaily = (hada) => {
 				</div>
 				<div id="cardBtn">
 					<button class="cardBtn__edit" data-cardid="${id}">Editar</button>
-					<button class="cardBtn__delete" data-cardid="${id}">Eliminar</button>
+					<button class="cardBtn__delete">Eliminar</button>
 					<button class="cardBtn__return" data-cardid="${id}">Volver</button>
 				</div>
 
@@ -53,12 +53,15 @@ const showDetailsFaily = (hada) => {
 				</form>
 			</div>
 
-      <div class="confirmDelete__modal hidden">
-        <p>Realmente desea borrar la información de la carta?</p>
-
-        <button id="confirmDelete__btn" data-cardId="${id}">Eliminar Carta</button>
-        <button id="cancelDelete__btn">Cancelar</button>
-      </div>
+      <div id="confirmDeleteFaily__modal" class="hidden modal">
+				<img
+					src="https://thumbs.dreamstime.com/b/escolta-stop-de-la-historieta-ejemplo-un-que-soporta-una-muestra-parada-135524686.jpg"
+					alt=""
+				/>
+				<p>Está chekeadísimo que deseas eliminar la carta para siempre?</p>
+				<button id="confirmDeleteFaily__btn" data-cardid="${id}">Eliminar por siempre</button>
+				<button id="cancelDelete__btn">Nooo! Cancelar!</button>
+			</div>
 			`;
 
 		//funcion regresar
@@ -108,11 +111,37 @@ const showDetailsFaily = (hada) => {
 						getFailyDetails(id);
 					}
 				})
-				.catch((err) => console.log(err));
+				.catch((err) => alert("Ocurrió el siguiente error:" + err));
 		};
 		$("#cardEdit").addEventListener("submit", (e) => {
 			e.preventDefault();
 			confirmEditFairy(hada);
 		});
+
+		$(".cardBtn__delete").addEventListener("click", () => {
+			$("#confirmDeleteFaily__modal").classList.remove("hidden");
+			document.getElementById("cardDetail").classList.add("hidden");
+		});
+
+		$("#cancelDelete__btn").addEventListener("click", () => {
+			$("#confirmDeleteFaily__modal").classList.add("hidden");
+			document.getElementById("cardDetail").classList.remove("hidden");
+		});
+
+		document
+			.getElementById("confirmDeleteFaily__btn")
+			.addEventListener("click", (e) => {
+				fetch(`${urlApi}/${e.currentTarget.dataset.cardid}`, {
+					method: "DELETE",
+				}).then((res) =>
+					res
+						.json()
+						.then((data) => {
+							getFaily(urlApi);
+							console.log(data);
+						})
+						.catch((err) => alert("Ocurrió el siguiente error:" + err))
+				);
+			});
 	}, 2000);
 };

@@ -10,7 +10,7 @@ const getFaily = (fetchUrl) => {
 	fetch(fetchUrl)
 		.then((res) => res.json())
 		.then((data) => showFaily(data))
-		.catch((err) => console.log(err));
+		.catch((err) => alert("Ocurrió el siguiente error:" + err));
 };
 
 getFaily(urlApi);
