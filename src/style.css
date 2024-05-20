@@ -15,7 +15,8 @@
   display: flex;
 }
 
-button {
+button,
+.button {
   background-color: rgb(155, 190, 135);
   height: 30px;
   border-radius: 6px;
@@ -23,25 +24,17 @@ button {
   border: none;
   color: rgb(17, 53, 44);
   font-family: "Cormorant SC", serif;
-  font-optical-sizing: auto;
   font-weight: 800;
   font-style: normal;
   font-size: 20px;
+  padding: 8px;
+  line-height: 10px;
 }
 @media (min-width: 1200px) {
-  button {
+  button,
+  .button {
     font-size: 25px;
   }
-}
-
-#cardBtn {
-  width: 50%;
-}
-
-.cardBtn__detail {
-  width: 200px;
-  margin-inline: auto;
-  background-color: rgb(255, 152, 0);
 }
 
 nav {
@@ -59,7 +52,12 @@ nav h1 {
 }
 @media (min-width: 970px) {
   nav h1 {
-    font-size: 48px;
+    font-size: 52px;
+  }
+}
+@media (min-width: 1200px) {
+  nav h1 {
+    font-size: 64px;
   }
 }
 @media (min-width: 970px) {
@@ -70,7 +68,12 @@ nav h1 {
 }
 
 .nav_btns {
-  display: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-inline: 20px;
+  margin-block: 10px;
 }
 @media (min-width: 970px) {
   .nav_btns {
@@ -154,13 +157,50 @@ nav h1 {
   padding: 15px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   gap: 15px;
+}
+@media (min-width: 970px) {
+  #cardDetail {
+    width: 700px;
+  }
+}
+#cardDetail h2 {
+  font-size: 36px;
+}
+@media (min-width: 970px) {
+  #cardDetail h2 {
+    font-size: 52px;
+  }
+}
+
+.cardBtn__detail {
+  width: 200px;
+  margin-inline: auto;
+  background-color: rgb(255, 152, 0);
+}
+
+#cardText {
+  text-align: center;
+}
+#cardText h2 {
+  font-size: 36px;
+}
+#cardText h3 {
+  font-size: 18px;
+}
+#cardText h4 {
+  font-size: 24px;
+}
+#cardText p {
+  font-size: 16px;
 }
 
 #cardBtn {
   display: flex;
   flex-direction: column;
   margin-inline: auto;
+  width: 50%;
   gap: 10px;
 }
 @media (min-width: 970px) {
@@ -174,6 +214,51 @@ nav h1 {
   width: 100%;
 }
 
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+}
+form input {
+  background-color: rgb(202, 209, 192);
+  width: 100%;
+  height: 30px;
+  border-radius: 3px;
+  box-shadow: 0px 1px 8px 1px rgb(180, 176, 176);
+  border: none;
+  color: rgb(17, 53, 44);
+  margin-block: 5px;
+  padding-inline: 10px;
+  font-size: 14px;
+}
+@media (min-width: 970px) {
+  form input {
+    width: 150px;
+    font-size: 16px;
+  }
+}
+@media (min-width: 1200px) {
+  form input {
+    width: 220px;
+    height: 35px;
+    font-size: 20px;
+  }
+}
+form textarea {
+  background-color: rgb(202, 209, 192);
+  border-radius: 3px;
+  box-shadow: 0px 1px 8px 1px rgb(180, 176, 176);
+  border: none;
+  color: rgb(17, 53, 44);
+  padding: 10px;
+  margin-bottom: 20px;
+  width: 100%;
+}
+form label {
+  font-size: 18px;
+}
+
 body {
   background-color: rgb(44, 120, 101);
   align-items: center;
@@ -181,32 +266,29 @@ body {
 }
 
 .searchDiv {
-  background: linear-gradient(180deg, rgb(122, 69, 44) 0%, rgb(199, 122, 21) 49%, rgb(122, 69, 44) 100%);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 10vh;
   box-shadow: 0px 1px 16px 1px rgb(58, 57, 57);
   position: fixed;
-  top: 120px;
+  top: 180px;
   width: 100%;
-}
-@media (min-width: 970px) {
-  .searchDiv {
-    height: 10vh;
-  }
-}
-
-.searchDiv {
-  display: flex;
+  background: rgb(255, 152, 0);
 }
 .searchDiv h3 {
   margin-inline: 20px;
   margin-top: 10px;
-  font-size: 25px;
+  font-size: 30px;
   font-family: "Cormorant SC", serif;
 }
-@media (min-width: 970px) {
-  .searchDiv {
-    justify-content: space-around;
-    align-items: center;
-  }
+
+.searchSelect {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  left: 20%;
+  top: 180px;
 }
 
 .searchForm {
@@ -232,7 +314,8 @@ body {
   }
 }
 
-select {
+select,
+input {
   background-color: rgb(202, 209, 192);
   width: 90px;
   height: 30px;
@@ -241,20 +324,26 @@ select {
   border: none;
   color: rgb(17, 53, 44);
   margin-block: 5px;
-  font-size: 10px;
+  font-size: 14px;
 }
 @media (min-width: 970px) {
-  select {
+  select,
+  input {
     width: 150px;
     font-size: 16px;
   }
 }
 @media (min-width: 1200px) {
-  select {
+  select,
+  input {
     width: 220px;
     height: 35px;
     font-size: 20px;
   }
+}
+select option,
+input option {
+  font-size: 14px;
 }
 
 #oracleBox {
@@ -267,11 +356,21 @@ select {
   font-size: 36px;
   text-align: center;
 }
+@media (min-width: 970px) {
+  #oracleBox__title {
+    font-size: 48px;
+  }
+}
 
 #oracleBox__text {
-  margin-block: 10px;
+  margin-block: 50px;
   font-size: 24px;
   text-align: center;
+}
+@media (min-width: 970px) {
+  #oracleBox__text {
+    font-size: 32px;
+  }
 }
 
 #oracleBox__carrusel {
@@ -280,7 +379,7 @@ select {
   overflow-x: auto;
   display: flex;
   flex-direction: row;
-  gap: 10px;
+  gap: 40px;
 }
 
 .oracle__cards {
@@ -292,26 +391,79 @@ select {
 
 .oracleCard__title {
   margin-block: 10px;
+  font-size: 24px;
   text-align: center;
+}
+@media (min-width: 970px) {
+  .oracleCard__title {
+    font-size: 32px;
+  }
 }
 
 .oracleCard__text {
-  margin-block: 10px;
+  margin-block: 30px;
   word-wrap: break-word;
   overflow: hidden;
   text-align: center;
+}
+@media (min-width: 970px) {
+  .oracleCard__text {
+    font-size: 20px;
+  }
 }
 
 #cardOracleBox {
   box-shadow: 0px 1px 16px 1px rgb(58, 57, 57);
   border-radius: 10px;
-  width: 400px;
+  width: 300px;
   padding: 15px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   gap: 15px;
   background-color: rgb(155, 190, 135);
   margin-bottom: 10px;
+}
+@media (min-width: 970px) {
+  #cardOracleBox {
+    width: 400px;
+  }
+}
+#cardOracleBox h2 {
+  text-align: center;
+  font-size: 32px;
+}
+@media (min-width: 970px) {
+  #cardOracleBox h2 {
+    font-size: 48px;
+  }
+}
+#cardOracleBox h3 {
+  text-align: center;
+  font-size: 18px;
+}
+@media (min-width: 970px) {
+  #cardOracleBox h3 {
+    font-size: 24px;
+  }
+}
+#cardOracleBox h4 {
+  text-align: center;
+  font-size: 24px;
+}
+@media (min-width: 970px) {
+  #cardOracleBox h4 {
+    font-size: 32px;
+  }
+}
+#cardOracleBox p {
+  text-align: center;
+  font-size: 16px;
+}
+@media (min-width: 970px) {
+  #cardOracleBox p {
+    font-size: 20px;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

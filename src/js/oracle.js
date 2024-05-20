@@ -53,7 +53,7 @@ const showFailyOracle = (hada, cardsBox) => {
 	cardsBox.innerHTML = `
     <div id="cardOracleBox">
         <h2 class="fairyName">${nombre}</h2>
-        <p class="fairyKind">${verbo}</p>
+        <h3 class="fairyKind">${verbo}</h3>
         <h4 class="fairyElement">"${elemento} - ${color}"</h4>
         <img src="${imagen}" alt="Imágen del Hada" class="fairyImg" />
         <p class="failySignify">${mensaje}</p>

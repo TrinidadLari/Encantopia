@@ -25,9 +25,9 @@ const showDetailsFaily = (hada) => {
 				</div>
 				<div id="cardText">
 					<h2 class="fairyName">${nombre}</h2>
-					<p class="fairyKind">${verbo}</p>
-					<p class="fairyElement">${elemento}</p>
-					<p class="failyColor">${color}</p>
+					<h3 class="fairyKind">${verbo}</h3>
+					<h4 class="fairyElement">${elemento} - ${color}</h4>
+					
 					
 					<p class="failySignify">${mensaje}</p>
 				</div>

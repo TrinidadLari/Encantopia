@@ -11,7 +11,10 @@ nav {
 		padding-left: 48px;
 
 		@include md() {
-			font-size: 48px;
+			font-size: 52px;
+		}
+		@include md-max() {
+			font-size: 64px;
 		}
 	}
 
@@ -22,7 +25,14 @@ nav {
 }
 
 .nav_btns {
-	display: none;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	//display: none;
+	//display: flex;
+	gap: 20px;
+	margin-inline: 20px;
+	margin-block: 10px;
 
 	@include md() {
 		display: flex;
