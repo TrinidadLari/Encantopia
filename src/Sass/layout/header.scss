@@ -1,36 +1,29 @@
 .searchDiv {
-	//height: 20vh;
-	// background-color: $details-color;
-	// background: rgb(2,0,36);
-	background: linear-gradient(
-		180deg,
-		rgba(122, 69, 44, 1) 0%,
-		rgba(199, 122, 21, 1) 49%,
-		rgba(122, 69, 44, 1) 100%
-	);
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	height: 10vh;
 	box-shadow: $shadow-dark;
 	position: fixed;
-	top: 120px;
+	top: 180px;
 	width: 100%;
+	background: $details-color;
 
-	@include md() {
-		height: 10vh;
-	}
-}
-
-.searchDiv {
-	display: flex;
 	h3 {
 		margin-inline: 20px;
 		margin-top: 10px;
-		font-size: 25px;
+		font-size: 30px;
 		font-family: "Cormorant SC", serif;
+		// text-shadow: -2px -2px 5px rgb(222, 222, 222);
 	}
+}
 
-	@include md() {
-		justify-content: space-around;
-		align-items: center;
-	}
+.searchSelect {
+	display: flex;
+	flex-direction: column;
+	position: fixed;
+	left: 20%;
+	top: 180px;
 }
 
 .searchForm {
@@ -54,7 +47,8 @@
 	}
 }
 
-select {
+select,
+input {
 	background-color: $font-color-light;
 	width: 90px;
 	height: 30px;
@@ -63,7 +57,7 @@ select {
 	border: none;
 	color: $font-color-dark;
 	margin-block: 5px;
-	font-size: 10px;
+	font-size: 14px;
 
 	@include md() {
 		width: 150px;
@@ -74,5 +68,9 @@ select {
 		width: 220px;
 		height: 35px;
 		font-size: 20px;
+	}
+
+	option {
+		font-size: 14px;
 	}
 }
