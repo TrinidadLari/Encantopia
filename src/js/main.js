@@ -57,7 +57,10 @@ const hideSpinner = () => {
 const clickBtn__detail = (btns) => {
 	btns.forEach((btn) =>
 		btn.addEventListener("click", () => {
+			console.log("hizo el click el detalle");
 			getFailyDetails(btn.dataset.cardid);
+			//document.getElementById("cardDetail").classList.remove("hidden");
+			console.log(getFailyDetails);
 		})
 	);
 };

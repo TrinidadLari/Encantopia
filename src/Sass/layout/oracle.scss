@@ -1,0 +1,59 @@
+#oracleBox {
+	margin-top: 300px;
+	margin-inline: 40px;
+}
+
+#oracleBox__title {
+	margin-block: 10px;
+	font-size: 36px;
+	text-align: center;
+}
+
+#oracleBox__text {
+	margin-block: 10px;
+	font-size: 24px;
+	text-align: center;
+}
+
+#oracleBox__carrusel {
+	height: 1000px;
+	width: 100%;
+	overflow-x: auto;
+	display: flex;
+	flex-direction: row;
+	gap: 10px;
+}
+
+.oracle__cards {
+	width: 600px;
+	height: 600px;
+	display: inline-block;
+	margin-right: 10px;
+}
+
+.oracleCard__title {
+	margin-block: 10px;
+	text-align: center;
+}
+
+.oracleCard__text {
+	margin-block: 10px;
+	word-wrap: break-word;
+	overflow: hidden;
+	text-align: center;
+}
+
+// .oracleBox__faily {
+// }
+
+#cardOracleBox {
+	box-shadow: $shadow-dark;
+	border-radius: 10px;
+	width: 400px;
+	padding: 15px;
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+	background-color: $secondary-color;
+	margin-bottom: 10px;
+}
