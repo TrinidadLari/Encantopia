@@ -19,7 +19,7 @@ const showDetailsFaily = (hada) => {
 		const { nombre, id, verbo, elemento, color, imagen, mensaje } = hada;
 
 		$("#cardsBox").innerHTML = `
-        <div id="cardDetail" class="hidden">
+        <div id="cardDetail">
 				<div class="cardImg">
 					<img src="${imagen}" alt="Imágen de Hada" class="fairyImg" />
 				</div>
