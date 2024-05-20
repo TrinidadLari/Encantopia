@@ -64,3 +64,8 @@ const clickBtn__detail = (btns) => {
 		})
 	);
 };
+
+$("#spanFilter__btn").addEventListener("click", () => {
+	console.log("Mira como te la clickeo!!");
+	$(".searchSelect").classList.toggle("hidden");
+});
