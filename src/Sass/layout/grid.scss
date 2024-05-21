@@ -74,9 +74,7 @@
 		width: 700px;
 	}
 
-	@include md-max() {
-		//width: 700px;
-	}
+
 	h2 {
 		font-size: 36px;
 		font-weight: 800;
@@ -87,7 +85,6 @@
 }
 
 .cardBtn__detail {
-	width: 200px;
 	margin-inline: auto;
 	background-color: $details-color;
 }
@@ -142,9 +139,6 @@
 	width: 100%;
 }
 
-// .fairyName {
-// 	margin-bottom: 20px;
-// }
 form {
 	display: flex;
 	flex-direction: column;

@@ -31,7 +31,7 @@ const showFaily = (hadas) => {
           <h4 class="fairyElement">${elemento}</h4>
 					<img src="${imagen}" alt="Imágen del Hada" class="fairyImg" />
 					<button class="cardBtn__detail" data-cardid="${id}">
-						Ver detalles
+						VER DETALLES
 					</button>
 				</div>
       `;
@@ -58,13 +58,13 @@ const clickBtn__detail = (btns) => {
 		btn.addEventListener("click", () => {
 			console.log("hizo el click el detalle");
 			getFailyDetails(btn.dataset.cardid);
-			//document.getElementById("cardDetail").classList.remove("hidden");
 			console.log(getFailyDetails);
 		})   
 	);  
 };
 
-$("#spanFilter__btn").addEventListener("click", () => {
+
+document.getElementById("spanFilter__btn").addEventListener("click", () => {
 	console.log("Mira como te la clickeo!!");
-	$(".searchSelect").classList.toggle("hidden");
+	document.getElementById("searchSelect").classList.toggle("hidden");
 });
