@@ -19,7 +19,6 @@ console.log(getFaily);
 //MOSTRAR HADAS
 const showFaily = (hadas) => {
 	showSpinner();
-
 	setTimeout(() => {
 		hideSpinner();
 		$("#cardsBox").innerHTML = "";
@@ -61,8 +60,8 @@ const clickBtn__detail = (btns) => {
 			getFailyDetails(btn.dataset.cardid);
 			//document.getElementById("cardDetail").classList.remove("hidden");
 			console.log(getFailyDetails);
-		})
-	);
+		})   
+	);  
 };
 
 $("#spanFilter__btn").addEventListener("click", () => {

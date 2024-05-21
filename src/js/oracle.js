@@ -59,5 +59,4 @@ const showFailyOracle = (hada, cardsBox) => {
         <p class="failySignify">${mensaje}</p>
     </div>
     `;
-	// clickBtn__detail($$(".cardBtn__detail"));
 };

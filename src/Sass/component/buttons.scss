@@ -7,7 +7,6 @@ button,
 	border: none;
 	color: $font-color-dark;
 	font-family: "Cormorant SC", serif;
-	//font-optical-sizing: auto;
 	font-weight: 800;
 	font-style: normal;
 	font-size: 20px;
@@ -15,12 +14,20 @@ button,
 	line-height: 10px;
 
 	@include md() {
-		//width: 25%;
+    font-size: 24;
 	}
 
 	@include md-max() {
-		//width: 200px;
-		//height: 35px;
-		font-size: 25px;
+		font-size: 28px;
 	}
+}
+
+.cardBtnReturn__newF{
+  @include md() {
+      width: 70%;
+		}
+
+		@include md-max() {
+      width: 50%;
+		}
 }
