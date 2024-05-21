@@ -10,9 +10,6 @@
 		<main id="mainId">
 			<nav>
 				<h1>Oráculo de Hadas</h1>
-				<div>
-					<button class="hidden">MENU HAMBURGUESA</button>
-				</div>
 				<div class="nav_btns">
 					<button id="messageRandom__btn">MENSAJE</button>
 					<button id="oracleBox__btn">ORÁCULO</button>
@@ -22,7 +19,7 @@
 			<div class="searchDiv">
 				<span id="spanFilter__btn"><h3>Filtrar</h3></span>
 				<form class="searchForm">
-					<div class="searchSelect hidden">
+					<div id="searchSelect" class="searchSelect hidden">
 						<select name="" id="selectVerb">
 							<option value="Acción...">Acción...</option>
 							<option value="Paciencia">Paciencia</option>
@@ -65,7 +62,7 @@
 				</form>
 			</div>
 
-			<div class="hidden" id="spinnerBox">
+			<div class="" id="spinnerBox">
 				<img src="../assets/svg/tadpole.svg" alt="Cargando" />
 			</div>
 
@@ -173,4 +170,5 @@
 	<script src="src/js/filters.js"></script>
 	<script src="src/js/message.js"></script>
 	<script src="src/js/oracle.js"></script>
+  <script src="src/js/removehidden.js"></script>
 </html>

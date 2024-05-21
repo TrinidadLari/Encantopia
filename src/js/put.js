@@ -10,10 +10,9 @@ const getFailyDetails = (id) => {
 // //MOSTRAR DETALLES DE HADAS
 
 const showDetailsFaily = (hada) => {
-	showSpinner();
 
-	setTimeout(() => {
-		hideSpinner();
+
+	
 		$("#cardsBox").innerHTML = "";
 
 		const { nombre, id, verbo, elemento, color, imagen, mensaje } = hada;
@@ -55,7 +54,7 @@ const showDetailsFaily = (hada) => {
 
       <div id="confirmDeleteFaily__modal" class="hidden modal">
 				<img
-					src="https://thumbs.dreamstime.com/b/escolta-stop-de-la-historieta-ejemplo-un-que-soporta-una-muestra-parada-135524686.jpg"
+					src="https://img.icons8.com/?size=100&id=U12vJQsF1INo&format=png&color=000000"
 					alt=""
 				/>
 				<p>Está chekeadísimo que deseas eliminar la carta para siempre?</p>
@@ -121,16 +120,21 @@ const showDetailsFaily = (hada) => {
 		$(".cardBtn__delete").addEventListener("click", () => {
 			$("#confirmDeleteFaily__modal").classList.remove("hidden");
 			document.getElementById("cardDetail").classList.add("hidden");
+      $("#cardsBox").classList.add("flex");
 		});
 
 		$("#cancelDelete__btn").addEventListener("click", () => {
 			$("#confirmDeleteFaily__modal").classList.add("hidden");
 			document.getElementById("cardDetail").classList.remove("hidden");
+  $("#cardsBox").classList.remove("flex");
+
 		});
 
 		document
 			.getElementById("confirmDeleteFaily__btn")
 			.addEventListener("click", (e) => {
+           $("#confirmDeleteFaily__modal").classList.add("hidden");
+        $("#cardsBox").classList.remove("flex");
 				fetch(`${urlApi}/${e.currentTarget.dataset.cardid}`, {
 					method: "DELETE",
 				}).then((res) =>
@@ -142,6 +146,7 @@ const showDetailsFaily = (hada) => {
 						})
 						.catch((err) => alert("Ocurrió el siguiente error:" + err))
 				);
+     
 			});
-	}, 2000);
+
 };

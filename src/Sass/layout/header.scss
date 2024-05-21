@@ -5,16 +5,21 @@
 	height: 10vh;
 	box-shadow: $shadow-dark;
 	position: fixed;
-	top: 180px;
+	top: 200px;
 	width: 100%;
 	background: $details-color;
 
 	h3 {
-		margin-inline: 20px;
-		margin-top: 10px;
 		font-size: 30px;
 		font-family: "Cormorant SC", serif;
-		// text-shadow: -2px -2px 5px rgb(222, 222, 222);
+
+		@include md() {
+			font-size: 40px;
+		}
+
+		@include md-max() {
+			font-size: 50px;
+		}
 	}
 }
 
@@ -23,12 +28,18 @@
 	flex-direction: column;
 	position: fixed;
 	left: 20%;
-	top: 180px;
+	top: 250px;
+}
+
+.serchSelectNav{
+  display: flex;
+  gap: 10px;
 }
 
 .searchForm {
 	display: flex;
 	flex-direction: row;
+  align-items: inherit;
 
 	@include md() {
 		gap: 100px;
