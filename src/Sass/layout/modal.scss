@@ -1,7 +1,6 @@
 #confirmDeleteFaily__modal{
 margin-top: 100px;
   width: 100%;
-  //border: none;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -11,8 +10,6 @@ margin-top: 100px;
   border-radius: 15px;
   box-shadow: $shadow-dark, $shadow-dark;
   max-width: 350px;
-// position: relative;
-// margin: 0 auto;
 
   p{
     font-family: $font-family-secondary;
