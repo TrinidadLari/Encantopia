@@ -8,6 +8,7 @@
         } else {
           searchSelectDiv.classList.add('hidden');
           searchSelectDiv.classList.remove('serchSelectNav');
+          searchSelectDiv.classList.add('searchSelect');
         }
       };
 
