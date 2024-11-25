@@ -28,6 +28,14 @@ const getCardAlma = () => getFailyRandom(urlAlma, boxAlma);
 oracleBox__btn.addEventListener("click", () => {
 	cardsBox1.classList.add("hidden");
 	oracleBox.classList.remove("hidden");
+   // Ocultar elementos
+      document.getElementById("oracleBox__btn").classList.add("hidden");
+      document.getElementById("addNewFaily").classList.add("hidden");
+      document.getElementById("searchDiv").classList.add("hidden");
+      	document.getElementById("messageRandom__btn").classList.add("hidden");
+
+      // Mostrar botón de volver
+      document.getElementById("return__btn").classList.remove("hidden");
 	getCardTierra();
 	getCardAgua();
 	getCardAire();
@@ -52,11 +60,14 @@ const showFailyOracle = (hada, cardsBox) => {
 
 	cardsBox.innerHTML = `
     <div id="cardOracleBox">
+    <img src="${imagen}" alt="Imágen del Hada" class="fairyImg" />
+    <div id="textOracleBox">
         <h2 class="fairyName">${nombre}</h2>
         <h3 class="fairyKind">${verbo}</h3>
         <h4 class="fairyElement">"${elemento} - ${color}"</h4>
-        <img src="${imagen}" alt="Imágen del Hada" class="fairyImg" />
-        <p class="failySignify">${mensaje}</p>
+        
+        <p class="failySignify">${mensaje}</p> 
+        </div>
     </div>
     `;
 };

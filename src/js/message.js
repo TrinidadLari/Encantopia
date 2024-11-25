@@ -45,6 +45,7 @@ const resetToInitialState = () => {
   document.getElementById("searchDiv").classList.remove("hidden");
    cardsBox.classList.remove("hidden"); 
 	cardNewFaily.classList.add("hidden");
+  document.getElementById("oracleBox").classList.add("hidden");
 
   getFaily(urlApi);
 };

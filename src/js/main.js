@@ -75,12 +75,18 @@ menu.classList.toggle("hidden");
 
 //cerrar menu haciendo click en la pantalla
 
+
 document.addEventListener("click", (e) => {
-if (!menu.classList.contains("hidden") && !menu.contains(e.target) && !burgerBtn.contains(e.target)) {
-		menu.classList.add("hidden");
-	}
-if (!searchSelect.classList.contains("hidden") && !searchSelect.contains(e.target) && !filterBtn.contains(e.target)) {
-		searchSelect.classList.add("hidden");
+	
+	if (window.innerWidth < 970) {
+	
+		if (!menu.classList.contains("hidden") && !menu.contains(e.target) && !burgerBtn.contains(e.target)) {
+			menu.classList.add("hidden");
+		}
+
+
+		if (!searchSelect.classList.contains("hidden") && !searchSelect.contains(e.target) && !filterBtn.contains(e.target)) {
+			searchSelect.classList.add("hidden");
+		}
 	}
 });
-
