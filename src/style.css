@@ -106,6 +106,15 @@ header h1 {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    width: 100%;
+  }
+}
+@media (min-width: 1200px) {
+  header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
   }
 }
 
@@ -166,6 +175,7 @@ header h1 {
   grid-template-columns: repeat(1, 1fr);
   gap: 30px;
   margin-top: 100px;
+  width: 100%;
   border-radius: 20px;
   min-height: 100vh;
 }
@@ -271,7 +281,7 @@ header h1 {
 }
 @media (min-width: 970px) {
   .cardImg img {
-    width: 600px;
+    width: 500px;
     margin-right: 20px;
   }
 }
@@ -367,6 +377,7 @@ form {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   padding: 20px;
   gap: 5px;
 }
@@ -446,6 +457,7 @@ form label {
 .footerDiv {
   box-shadow: 0 -4px 6px -1px rgba(0, 0, 0, 0.1);
   margin-top: 30px;
+  width: 100%;
 }
 .footerDiv p {
   text-align: center;

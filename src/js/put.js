@@ -42,18 +42,20 @@ const showDetailsFaily = (hada) => {
 				
 
 				<form id="cardEdit" class="hidden">
+         <label for="imgUpload__url" class="imgUpload__title">URL imagen</label>
+					<input type="text" class="imgUpload__url" id="imgUpload__url" aria-label="URL de imagen">
 					<label for="nameInput">Nombre</label>
-					<input type="text" name="" id="nameInput" />
+					<input type="text" name="nameInput" id="nameInput" >
 					<label for="verbInput">Acción</label>
-					<input type="text" name="" id="verbInput" />
+					<input type="text" name="verbInput" id="verbInput" >
 					<label for="elementInput">Elemento</label>
-					<input type="text" name="" id="elementInput" />
+					<input type="text" name="elementInput" id="elementInput" >
 					<label for="colorInput">Color</label>
-					<input type="text" name="" id="colorInput" />
+					<input type="text" name="colorInput" id="colorInput" >
 					<label for="messageInput">Mensaje</label>
-          <textarea name="" id="messageInput"></textarea>
+          <textarea name="messageInput" id="messageInput"></textarea>
 					<button class="cardBtn__return" data-cardid="${id}">Volver</button>
-					<input type="submit" class="button" id="confirmEdit__btn" value="Editar" />
+					<input type="submit" class="button" id="confirmEdit__btn" value="Editar" >
 				</form>
 			</div>
 
@@ -89,6 +91,7 @@ const showDetailsFaily = (hada) => {
 			$("#cardText").classList.add("hidden");
 			$("#cardBtn").classList.add("hidden");
 			$("#cardEdit").classList.remove("hidden");
+      $("#imgUpload__url").value = hada.imagen;
 			$("#nameInput").value = hada.nombre;
 			$("#verbInput").value = hada.verbo;
 			$("#elementInput").value = hada.elemento;
@@ -99,6 +102,7 @@ const showDetailsFaily = (hada) => {
 		const confirmEditFairy = (hada) => {
 			const failyEdited = {
 				...hada,
+        imagen: $("#imgUpload__url").value,
 				nombre: $("#nameInput").value,
 				verbo: $("#verbInput").value,
 				elemento: $("#elementInput").value,

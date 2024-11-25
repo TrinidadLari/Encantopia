@@ -59,7 +59,7 @@ const clickBtn__detail = (btns) => {
 	);  
 };
 
-
+//menu ocultar-mostrar
 	const menu = document.getElementById("burguerMenu");
 	const burgerBtn = document.getElementById("burgerBtn");
 	const searchSelect = document.getElementById("searchSelect");
