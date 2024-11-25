@@ -2,39 +2,103 @@ const addNewFaily__btn = document.getElementById("addNewFaily");
 const cardsBox = document.getElementById("cardsBox");
 const cardNewFaily = document.getElementById("cardNewFaily");
 const cardNewFaily__form = document.getElementById("cardNewFaily__form");
+const return__btn = document.getElementById("return__btn");
+
 
 addNewFaily__btn.addEventListener("click", () => {
-	cardsBox.innerHTML = "";
+	cardsBox.classList.add("hidden");
 	cardNewFaily.classList.remove("hidden");
 
-	cardNewFaily.addEventListener("submit", (e) => {
-		e.preventDefault();
-		const newFaily = {
-			nombre: document.getElementById("nameInput__newF").value,
-			verbo: document.getElementById("verbInput__newF").value,
-			elemento: document.getElementById("elementInput__newF").value,
-			color: document.getElementById("colorInput__newF").value,
-			mensaje: document.getElementById("messageInput__newF").value,
-			imagen: document.getElementById("imgUpload__url").value,
-		};
+  // Ocultar menu 
+	document.getElementById("oracleBox__btn").classList.add("hidden");
+	document.getElementById("addNewFaily").classList.add("hidden");
+	document.getElementById("messageRandom__btn").classList.add("hidden");
+	document.getElementById("searchDiv").classList.add("hidden");
 
-		fetch(`${urlApi}`, {
-			method: "POST",
-			headers: {
-				"Content-Type": "application/json",
-			},
-			body: JSON.stringify(newFaily),
-		})
-			.then((res) =>
-				res.json().then((data) => {
-					cardNewFaily__form.reset();
-					cardNewFaily.classList.add("hidden");
-					getFaily(urlApi);
-					console.log(data);
-				})
-			)
-			.catch((err) => alert("Ocurrió el siguiente error:" + err));
+	// Mostrar botón de volver
+	return__btn.classList.remove("hidden");
+});
 
-		console.log(newFaily);
-	});
+
+cardNewFaily__form.addEventListener("submit", (e) => {
+	e.preventDefault();
+
+	const nombre = document.getElementById("nameInput__newF").value.trim();
+	const verbo = document.getElementById("verbInput__newF").value.trim();
+	const elemento = document.getElementById("elementInput__newF").value.trim();
+	const color = document.getElementById("colorInput__newF").value.trim();
+	const mensaje = document.getElementById("messageInput__newF").value.trim();
+	const imagen = document.getElementById("imgUpload__url").value.trim();
+
+	// Validaciones
+	let hasError = false;
+	if (!nombre) {
+		alert("El campo 'Nombre' es obligatorio.");
+		hasError = true;
+	} else if (nombre.length > 14) {
+		alert("El campo 'Nombre' no puede tener más de 14 caracteres.");
+		hasError = true;
+	}
+
+	if (!verbo) {
+		alert("El campo 'Verbo' es obligatorio.");
+		hasError = true;
+	}
+
+	if (!elemento) {
+		alert("El campo 'Elemento' es obligatorio.");
+		hasError = true;
+	}
+
+	if (!color) {
+		alert("El campo 'Color' es obligatorio.");
+		hasError = true;
+	}
+
+	if (!mensaje) {
+		alert("El campo 'Mensaje' es obligatorio.");
+		hasError = true;
+	} else if (mensaje.length > 250) {
+		alert("El campo 'Mensaje' no puede tener más de 250 caracteres.");
+		hasError = true;
+	}
+
+	if (!imagen) {
+		alert("El campo 'Imagen' es obligatorio.");
+		hasError = true;
+	}
+
+
+	if (hasError) return;
+
+	
+	const newFaily = { nombre, verbo, elemento, color, mensaje, imagen };
+
+	
+	fetch(`${urlApi}`, {
+		method: "POST",
+		headers: {
+			"Content-Type": "application/json",
+		},
+		body: JSON.stringify(newFaily),
+	})
+		.then((res) =>
+			res.json().then((data) => {
+				alert("Hada agregada con éxito.");
+				cardNewFaily__form.reset();
+				cardNewFaily.classList.add("hidden");
+				return__btn.classList.add("hidden");
+
+			
+				cardsBox.classList.remove("hidden");
+				document.getElementById("oracleBox__btn").classList.remove("hidden");
+				document.getElementById("addNewFaily").classList.remove("hidden");
+				document.getElementById("messageRandom__btn").classList.remove("hidden");
+				document.getElementById("searchDiv").classList.remove("hidden");
+
+				
+				getFaily(urlApi);
+			})
+		)
+		.catch((err) => alert("Ocurrió el siguiente error: " + err));
 });

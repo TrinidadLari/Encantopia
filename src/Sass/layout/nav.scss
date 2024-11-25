@@ -1,9 +1,7 @@
-nav {
+header {
 	background-color: $main-color;
 	width: 100%;
 	padding-block: 20px;
-	position: fixed;
-	top: 0;
 	box-shadow: $shadow-dark;
 	h1 {
 		font-family: "Cormorant SC", serif;
@@ -22,9 +20,19 @@ nav {
 
 	@include md() {
 		display: flex;
+    flex-direction: column;
 		justify-content: space-between;
+    width: 100%;
+	}
+
+  	@include md-max() {
+      display: flex;
+    flex-direction: column;
+		justify-content: space-between;
+    width: 100%;
 	}
 }
+
 
 .nav_btns {
 	display: flex;
@@ -36,6 +44,49 @@ nav {
 	@include md() {
 		display: flex;
 		gap: 50px;
-		margin-right: 48px;
 	}
+}
+
+.searchDiv{
+  display: flex;
+  justify-content: center;
+}
+
+.divBurgerBtn{
+  display: flex;
+  justify-content: center;
+}
+
+.burguerMenu{
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(240, 248, 255, 0.699);
+  color: black;
+  border-radius: 6px ;
+  width: 60%;
+  position: fixed;
+  right: 0;
+ 
+
+  .searchDiv{
+    flex-direction: column;
+    gap: 2px;
+    align-items: center;
+   
+  }
+
+  button{
+    background-color: transparent;
+    box-shadow: none;
+    cursor: pointer;
+  }
+
+
+  .nav_btns{
+    gap: 2px;
+  }
+
+  form{
+    padding: 0;
+  }
 }

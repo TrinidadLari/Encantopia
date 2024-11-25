@@ -20,6 +20,7 @@
 button,
 .button {
   background-color: rgb(155, 190, 135);
+  height: 30px;
   border-radius: 6px;
   box-shadow: 0px 1px 8px 1px rgb(203, 232, 186);
   border: none;
@@ -28,63 +29,48 @@ button,
   font-weight: 800;
   font-style: normal;
   font-size: 20px;
-  padding-block: 16px;
+  padding: 8px;
   line-height: 10px;
-  cursor: pointer;
-  width: 220px;
 }
 @media (min-width: 970px) {
   button,
   .button {
     font-size: 24;
-    width: 250px;
   }
 }
 @media (min-width: 1200px) {
   button,
   .button {
     font-size: 28px;
-    width: 300px;
   }
 }
 
-.button {
-  padding-block: 0;
+@media (min-width: 970px) {
+  .cardBtnReturn__newF {
+    width: 70%;
+  }
 }
-
-button:hover {
-  opacity: 0.8;
+@media (min-width: 1200px) {
+  .cardBtnReturn__newF {
+    width: 50%;
+  }
 }
 
 #spinnerBox {
   position: absolute;
-  top: 40%;
-  left: 40%;
-}
-@media (min-width: 970px) {
-  #spinnerBox {
-    top: 50%;
-    left: 50%;
-  }
-}
-@media (min-width: 1200px) {
-  #spinnerBox {
-    top: 50%;
-    left: 50%;
-  }
+  top: 50%;
+  left: 50%;
 }
 
-#spinnerBox img {
-  width: 100px;
-}
-
-header {
+nav {
   background-color: rgb(44, 120, 101);
   width: 100%;
   padding-block: 20px;
+  position: fixed;
+  top: 0;
   box-shadow: 0px 1px 16px 1px rgb(47, 83, 74);
 }
-header h1 {
+nav h1 {
   font-family: "Cormorant SC", serif;
   font-size: 34px;
   margin-inline: 20px;
@@ -92,29 +78,19 @@ header h1 {
   padding: inherit;
 }
 @media (min-width: 970px) {
-  header h1 {
+  nav h1 {
     font-size: 52px;
   }
 }
 @media (min-width: 1200px) {
-  header h1 {
+  nav h1 {
     font-size: 64px;
   }
 }
 @media (min-width: 970px) {
-  header {
+  nav {
     display: flex;
-    flex-direction: column;
     justify-content: space-between;
-    width: 100%;
-  }
-}
-@media (min-width: 1200px) {
-  header {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 100%;
   }
 }
 
@@ -129,63 +105,28 @@ header h1 {
   .nav_btns {
     display: flex;
     gap: 50px;
+    margin-right: 48px;
   }
-}
-
-.searchDiv {
-  display: flex;
-  justify-content: center;
-}
-
-.divBurgerBtn {
-  display: flex;
-  justify-content: center;
-}
-
-.burguerMenu {
-  display: flex;
-  flex-direction: column;
-  background-color: rgba(240, 248, 255, 0.699);
-  color: black;
-  border-radius: 6px;
-  width: 60%;
-  position: fixed;
-  right: 0;
-}
-.burguerMenu .searchDiv {
-  flex-direction: column;
-  gap: 2px;
-  align-items: center;
-}
-.burguerMenu button {
-  background-color: transparent;
-  box-shadow: none;
-  cursor: pointer;
-}
-.burguerMenu .nav_btns {
-  gap: 2px;
-}
-.burguerMenu form {
-  padding: 0;
 }
 
 #cardsBox {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   gap: 30px;
-  margin-top: 100px;
-  width: 100%;
+  width: 80%;
+  margin-top: 290px;
   border-radius: 20px;
-  min-height: 100vh;
-  padding-inline: 20px;
+  margin-inline: 10%;
 }
 @media (min-width: 970px) {
   #cardsBox {
+    display: grid;
     grid-template-columns: repeat(3, 1fr);
   }
 }
 @media (min-width: 1200px) {
   #cardsBox {
+    display: grid;
     grid-template-columns: repeat(3, 1fr);
   }
 }
@@ -193,13 +134,10 @@ header h1 {
 #cardBox {
   box-shadow: 0px 1px 16px 1px rgb(47, 83, 74);
   border-radius: 10px;
-  max-width: 100%;
-  overflow: hidden;
+  width: 100%;
   padding: 15px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  text-align: center;
   gap: 15px;
   background-color: rgb(155, 190, 135);
   margin-bottom: 10px;
@@ -240,9 +178,8 @@ header h1 {
   font-family: "Cormorant SC", serif;
   box-shadow: 0px 1px 16px 1px rgb(47, 83, 74);
   border-radius: 10px;
+  width: 95%;
   padding: 15px;
-  margin-inline: auto;
-  max-width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -250,12 +187,7 @@ header h1 {
 }
 @media (min-width: 970px) {
   #cardDetail {
-    flex-direction: row;
-  }
-}
-@media (min-width: 1200px) {
-  #cardDetail {
-    flex-direction: row;
+    width: 700px;
   }
 }
 #cardDetail h2 {
@@ -266,30 +198,6 @@ header h1 {
   #cardDetail h2 {
     font-size: 52px;
   }
-}
-
-.cardImg {
-  margin-block: auto;
-}
-
-@media (min-width: 970px) {
-  .cardImg img {
-    width: 500px;
-    margin-right: 20px;
-  }
-}
-@media (min-width: 1200px) {
-  .cardImg img {
-    width: 600px;
-    margin-right: 20px;
-  }
-}
-
-.cardImg-text {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  padding-inline: 20px;
 }
 
 .cardBtn__detail {
@@ -341,16 +249,12 @@ header h1 {
   display: flex;
   flex-direction: column;
   margin-inline: auto;
-  margin-block: 20px;
+  width: 50%;
   gap: 10px;
 }
 @media (min-width: 970px) {
   #cardBtn {
-    gap: 20px;
-  }
-}
-@media (min-width: 1200px) {
-  #cardBtn {
+    flex-direction: row;
     gap: 20px;
   }
 }
@@ -359,35 +263,14 @@ header h1 {
   width: 100%;
 }
 
-#cardNewFaily {
-  margin-top: 190px;
-  width: 70%;
-  margin-inline: auto;
-}
-
 form {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
   padding: 20px;
   gap: 5px;
 }
-form h3 {
-  font-size: 24px;
-  margin-bottom: 100px;
-}
-@media (min-width: 970px) {
-  form h3 {
-    font-size: 32px;
-  }
-}
-@media (min-width: 1200px) {
-  form h3 {
-    font-size: 40px;
-  }
-}
-form input, form select {
+form input {
   background-color: rgb(202, 209, 192);
   width: 100%;
   height: 30px;
@@ -400,14 +283,16 @@ form input, form select {
   font-size: 14px;
 }
 @media (min-width: 970px) {
-  form input, form select {
+  form input {
     font-size: 16px;
+    width: 70%;
   }
 }
 @media (min-width: 1200px) {
-  form input, form select {
+  form input {
     height: 35px;
     font-size: 20px;
+    width: 50%;
   }
 }
 form textarea {
@@ -424,11 +309,13 @@ form textarea {
 @media (min-width: 970px) {
   form textarea {
     font-size: 16px;
+    width: 70%;
   }
 }
 @media (min-width: 1200px) {
   form textarea {
     font-size: 20px;
+    width: 50%;
   }
 }
 form label {
@@ -441,40 +328,9 @@ form label {
   }
 }
 
-.boxBtn__newF {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
-}
-@media (min-width: 970px) {
-  .boxBtn__newF {
-    flex-direction: row;
-    justify-content: space-between;
-  }
-}
-@media (min-width: 1200px) {
-  .boxBtn__newF {
-    flex-direction: row;
-    justify-content: space-between;
-  }
-}
-
-@media (min-width: 970px) {
-  #cardEdit {
-    min-width: 400px;
-  }
-}
-@media (min-width: 1200px) {
-  #cardEdit {
-    min-width: 500px;
-  }
-}
-
 .footerDiv {
   box-shadow: 0 -4px 6px -1px rgba(0, 0, 0, 0.1);
   margin-top: 30px;
-  width: 100%;
 }
 .footerDiv p {
   text-align: center;
@@ -491,15 +347,21 @@ form label {
 }
 
 body {
-  display: flex;
-  flex-direction: column;
   background-color: rgb(44, 120, 101);
-  min-height: 100vh;
+  align-items: center;
+  height: 100vh;
 }
 
 .searchDiv {
   display: flex;
+  justify-content: space-around;
   align-items: center;
+  height: 10vh;
+  box-shadow: 0px 1px 16px 1px rgb(47, 83, 74);
+  position: fixed;
+  top: 200px;
+  width: 100%;
+  background: rgb(255, 152, 0);
 }
 .searchDiv h3 {
   font-size: 30px;
@@ -507,13 +369,11 @@ body {
 }
 @media (min-width: 970px) {
   .searchDiv h3 {
-    flex-direction: row;
     font-size: 40px;
   }
 }
 @media (min-width: 1200px) {
   .searchDiv h3 {
-    flex-direction: row;
     font-size: 50px;
   }
 }
@@ -538,7 +398,7 @@ body {
 }
 @media (min-width: 970px) {
   .searchForm {
-    gap: 20px;
+    gap: 100px;
   }
 }
 
@@ -592,9 +452,7 @@ input option {
   width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 50px;
+  gap: 20px;
   padding: 30px;
   background-color: rgb(255, 0, 0);
   z-index: 2;
@@ -618,15 +476,10 @@ input option {
   background-color: rgb(82, 243, 82);
   color: black;
 }
-#confirmDeleteFaily__modal img {
-  width: 200px;
-}
 
 #oracleBox {
-  margin-top: 100px;
+  margin-top: 300px;
   margin-inline: 40px;
-  display: flex;
-  flex-direction: column;
 }
 
 #oracleBox__title {
@@ -647,7 +500,6 @@ input option {
   text-align: center;
   padding-block: 20px;
   font-family: "Oswald", sans-serif;
-  width: 100%;
 }
 @media (min-width: 970px) {
   #oracleBox__text {
@@ -656,27 +508,19 @@ input option {
 }
 
 #oracleBox__carrusel {
-  min-height: 100vh;
+  height: 1200px;
   width: 100%;
+  overflow-x: auto;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
-}
-@media (min-width: 970px) {
-  #oracleBox__carrusel {
-    flex-direction: row;
-    overflow-x: auto;
-  }
+  flex-direction: row;
+  gap: 40px;
 }
 
 .oracle__cards {
+  width: 600px;
+  height: 600px;
   display: inline-block;
-}
-@media (min-width: 970px) {
-  .oracle__cards {
-    width: 800px;
-  }
+  margin-right: 10px;
 }
 
 .oracleCard__title {
@@ -693,6 +537,8 @@ input option {
 
 .oracleCard__text {
   margin-block: 30px;
+  word-wrap: break-word;
+  overflow: hidden;
   text-align: center;
   font-family: "Oswald", sans-serif;
 }
@@ -705,7 +551,7 @@ input option {
 #cardOracleBox {
   box-shadow: 0px 1px 16px 1px rgb(47, 83, 74);
   border-radius: 10px;
-  width: 330px;
+  width: 300px;
   padding: 15px;
   display: flex;
   flex-direction: column;
@@ -718,12 +564,8 @@ input option {
 }
 @media (min-width: 970px) {
   #cardOracleBox {
-    width: 800px;
-    flex-direction: row;
+    width: 400px;
   }
-}
-#cardOracleBox img {
-  width: 300px;
 }
 #cardOracleBox h2 {
   text-align: center;

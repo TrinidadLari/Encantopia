@@ -1,26 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" href="src/style.css" />
+		<meta charset="UTF-8" >
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" >
+		<link rel="stylesheet" href="src/style.css" >
 		<title>Encantopía</title>
 	</head>
 	<body id="bodyId">
 		<main id="mainId">
-			<nav>
+			<header>
 				<h1>Oráculo de Hadas</h1>
+        <div class="divBurgerBtn"><button class="burgerBtn hidden" id="burgerBtn" aria-label="Abrir menú">&#9776;</button></div>
+        <div class="burguerMenu" id="burguerMenu">
 				<div class="nav_btns">
 					<button id="messageRandom__btn">MENSAJE</button>
 					<button id="oracleBox__btn">ORÁCULO</button>
 					<button id="addNewFaily">AGREGAR HADA</button>
+          <button id="return__btn" class="hidden">VOLVER</button>
 				</div>
-			</nav>
-			<div class="searchDiv">
-				<span id="spanFilter__btn"><h3>Filtrar</h3></span>
-				<form class="searchForm">
-					<div id="searchSelect" class="searchSelect hidden">
-						<select name="" id="selectVerb">
+	<div class="searchDiv" id="searchDiv">
+    <button id="spanFilter__btn">FILTRAR</button>
+				<form class="searchForm" id="searchForm">
+					<div id="searchSelect" class="hidden searchSelect">
+						<select name="selectVerb" id="selectVerb">
 							<option value="Acción...">Acción...</option>
 							<option value="Paciencia">Paciencia</option>
 							<option value="Gratitud">Gratitud</option>
@@ -35,7 +37,7 @@
 							<option value="Actuar">Actuar</option>
 						</select>
 
-						<select name="" id="selectElement">
+						<select name="selectElement" id="selectElement">
 							<option value="Elemento...">Elemento...</option>
 							<option value="Agua">Agua</option>
 							<option value="Tierra">Tierra</option>
@@ -43,7 +45,7 @@
 							<option value="Aire">Aire</option>
 							<option value="Alma">Alma</option>
 						</select>
-						<select name="" id="selectColor">
+						<select name="selectColor" id="selectColor">
 							<option value="Color...">Color...</option>
 							<option value="Aguamarín">Aguamarín</option>
 							<option value="Verde">Verde</option>
@@ -56,19 +58,23 @@
 						</select>
 					</div>
 					<div class="searchBtn">
-						<!-- <button>BUSCAR</button> -->
 						<button id="cleanSelect__btn">RESTABLECER</button>
 					</div>
 				</form>
 			</div>
 
+</div>
+</header>
+		
+
 			<div class="" id="spinnerBox">
-				<img src="../assets/svg/tadpole.svg" alt="Cargando" />
+				<img src="./assets/svg/tadpole.svg" alt="Cargando" >
 			</div>
 
 			<div class="cardsBox" id="cardsBox"></div>
 			<div id="cardNewFaily" class="hidden">
 				<form id="cardNewFaily__form">
+          <h3>Crea tu propia carta</h3>
 					<label for="imgUpload__url" class="imgUpload__title"
 						>URL imagen</label
 					>
@@ -77,17 +83,48 @@
 						class="imgUpload__url"
 						id="imgUpload__url"
 						aria-label="URL de imagen"
-					/>
+					>
 					<label for="nameInput__newF">Nombre</label>
-					<input type="text" name="" id="nameInput__newF" />
+					<input type="text" name="nameInput__newF" id="nameInput__newF" >
 					<label for="verbInput__newF">Acción</label>
-					<input type="text" name="" id="verbInput__newF" />
+          <select name="selectVerb" id="verbInput__newF">
+							<option value="Acción...">Acción...</option>
+							<option value="Paciencia">Paciencia</option>
+							<option value="Gratitud">Gratitud</option>
+							<option value="Fluir">Fluir</option>
+							<option value="Decisión">Decisión</option>
+							<option value="Escucha">Escucha</option>
+							<option value="Disfrute">Disfrute</option>
+							<option value="Confianza">Confianza</option>
+							<option value="Silencio">Silencio</option>
+							<option value="Amor">Amor</option>
+							<option value="Quietud">Quietud</option>
+							<option value="Actuar">Actuar</option>
+						</select>
 					<label for="elementInput__newF">Elemento</label>
-					<input type="text" name="" id="elementInput__newF" />
+          <select name="selectElement" id="elementInput__newF">
+							<option value="Elemento...">Elemento...</option>
+							<option value="Agua">Agua</option>
+							<option value="Tierra">Tierra</option>
+							<option value="Fuego">Fuego</option>
+							<option value="Aire">Aire</option>
+							<option value="Alma">Alma</option>
+						</select>
 					<label for="colorInput__newF">Color</label>
-					<input type="text" name="" id="colorInput__newF" />
+          <select name="selectColor" id="colorInput__newF">
+							<option value="Color...">Color...</option>
+							<option value="Aguamarín">Aguamarín</option>
+							<option value="Verde">Verde</option>
+							<option value="Rosado">Rosado</option>
+							<option value="Blanco">Blanco</option>
+							<option value="Limón">Limón</option>
+							<option value="Madera">Madera</option>
+							<option value="Naranja">Naranja</option>
+							<option value="Rojo">Rojo</option>
+						</select>
 					<label for="messageInput__newF">Mensaje</label>
-					<textarea name="" id="messageInput__newF"></textarea>
+					<textarea name="messageInput__newF" id="messageInput__newF"></textarea>
+          <div class="boxBtn__newF">
 					<button class="cardBtnReturn__newF" data-cardid="${id}">
 						Cancelar
 					</button>
@@ -96,7 +133,7 @@
 						class="button"
 						id="confirmNewFaily__btn"
 						value="Crear"
-					/>
+					></div>
 				</form>
 			</div>
 			<div id="oracleBox" class="hidden">
@@ -171,13 +208,13 @@
         <p>©2024 - By Trinidad Sabina Lari 🧡</p>
       </div>
     </footer>
-	</body>
 
-	<script src="src/js/main.js"></script>
-	<script src="src/js/put.js"></script>
-	<script src="src/js/post.js"></script>
-	<script src="src/js/filters.js"></script>
-	<script src="src/js/message.js"></script>
-	<script src="src/js/oracle.js"></script>
-  <script src="src/js/removehidden.js"></script>
+    <script src="src/js/main.js"></script>
+	  <script src="src/js/put.js"></script>
+	  <script src="src/js/post.js"></script>
+	  <script src="src/js/filters.js"></script>
+	  <script src="src/js/message.js"></script>
+	  <script src="src/js/oracle.js"></script>
+    <script src="src/js/removehidden.js"></script>
+	</body>	
 </html>

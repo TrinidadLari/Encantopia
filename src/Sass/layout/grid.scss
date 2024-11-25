@@ -2,18 +2,18 @@
 	display: grid;
 	grid-template-columns: repeat(1, 1fr);
 	gap: 30px;
-	width: 80%;
-	margin-top: 290px;
+	margin-top: 100px;
+  width: 100%;
 	border-radius: 20px;
-	margin-inline: 10%;
+  min-height: 100vh;
+  padding-inline: 20px;
 
 	@include md() {
-		display: grid;
 		grid-template-columns: repeat(3, 1fr);
+   
 	}
 
 	@include md-max() {
-		display: grid;
 		grid-template-columns: repeat(3, 1fr);
 	}
 }
@@ -21,13 +21,17 @@
 #cardBox {
 	box-shadow: $shadow-dark;
 	border-radius: 10px;
-	width: 100%;
+	max-width: 100%;
+  overflow: hidden;
 	padding: 15px;
 	display: flex;
 	flex-direction: column;
+  justify-content: space-between;
+  text-align: center; 
 	gap: 15px;
 	background-color: $secondary-color;
 	margin-bottom: 10px;
+
 
 	h2 {
 		font-family: "Cormorant SC", serif;
@@ -60,18 +64,22 @@
 
 #cardDetail {
 	font-family: "Cormorant SC", serif;
-
 	box-shadow: $shadow-dark;
 	border-radius: 10px;
-	width: 95%;
 	padding: 15px;
+  margin-inline: auto;
+  max-width: 100%;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	gap: 15px;
+	gap: 15px; 
 
 	@include md() {
-		width: 700px;
+		flex-direction: row;
+	}
+
+  @include md-max() {
+				flex-direction: row;
 	}
 
 
@@ -82,6 +90,33 @@
 			font-size: 52px;
 		}
 	}
+}
+
+
+.cardImg{
+  margin-block: auto;
+}
+
+.cardImg img{
+
+@include md() {
+	width: 500px;
+  margin-right: 20px;
+	}
+
+    @include md-max() {
+				width: 600px;
+  margin-right: 20px;
+	}
+
+}
+
+.cardImg-text{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding-inline: 20px;
+
 }
 
 .cardBtn__detail {
@@ -126,29 +161,50 @@
 	display: flex;
 	flex-direction: column;
 	margin-inline: auto;
-	width: 50%;
+  margin-block: 20px;
 	gap: 10px;
 
+
 	@include md() {
-		flex-direction: row;
 		gap: 20px;
 	}
+      @include md-max() {
+		gap: 20px;
+	}
+
 }
 
 .fairyImg {
 	width: 100%;
 }
 
+#cardNewFaily{
+  margin-top: 190px;
+  width: 70%;
+  margin-inline: auto;
+}
+
 form {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+  align-items: center;
 	padding: 20px;
   gap: 5px;
 
-  
+  h3{
+    font-size: 24px;
+    margin-bottom: 100px;
 
-	input {
+    @include md() {
+	font-size: 32px;
+	}
+      @include md-max() {
+		font-size: 40px;
+	}
+  }
+
+	input, select {
 		background-color: $font-color-light;
 		width: 100%;
 		height: 30px;
@@ -163,16 +219,16 @@ form {
 		@include md() {
 			
 			font-size: 16px;
-      width: 70%;
 		}
 
 		@include md-max() {
 			
 			height: 35px;
 			font-size: 20px;
-      width: 50%;
 		}
 	}
+
+ 
 	textarea {
 		background-color: $font-color-light;
 		border-radius: 3px;
@@ -186,12 +242,10 @@ form {
 
     @include md() {
 			font-size: 16px;
-      width: 70%;
 		}
 
 		@include md-max() {
 			font-size: 20px;
-      width: 50%;
 		}
 	}
 	label {
@@ -204,4 +258,32 @@ form {
 		}
 
 	}
+}
+.boxBtn__newF{
+  display: flex;
+ flex-direction: column;
+ align-items: center;
+ gap: 20px;
+
+  @include md() {
+			
+		flex-direction: row;
+     justify-content: space-between;
+		}
+
+    @include md-max() {
+			flex-direction: row;
+     justify-content: space-between;
+		}
+}
+
+#cardEdit{
+  @include md() {
+			
+		min-width: 400px;
+		}
+
+    @include md-max() {
+			min-width: 500px;
+		}
 }
