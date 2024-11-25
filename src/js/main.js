@@ -68,3 +68,8 @@ document.getElementById("spanFilter__btn").addEventListener("click", () => {
 
 	document.getElementById("searchSelect").classList.toggle("hidden");
 });
+
+document.getElementById("burgerBtn").addEventListener("click", () => {
+
+	document.getElementById("burguerMenu").classList.toggle("hidden");
+});

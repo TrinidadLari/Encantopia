@@ -8,8 +8,10 @@
 	</head>
 	<body id="bodyId">
 		<main id="mainId">
-			<nav>
+			<header>
 				<h1>Oráculo de Hadas</h1>
+        <div class="divBurgerBtn"><button class="burgerBtn hidden" id="burgerBtn" aria-label="Abrir menú">&#9776;</button></div>
+        <div class="burguerMenu" id="burguerMenu">
 				<div class="nav_btns">
 					<button id="messageRandom__btn">MENSAJE</button>
 					<button id="oracleBox__btn">ORÁCULO</button>
@@ -17,10 +19,9 @@
           <button id="return__btn" class="hidden">VOLVER</button>
 				</div>
 	<div class="searchDiv" id="searchDiv">
-    <button id="spanFilter__btn">Filtrar</button>
-				<!-- <h3 id="spanFilter__btn">Filtrar</h3> -->
-				<form class="searchForm">
-					<div id="searchSelect" class="searchSelect hidden">
+    <button id="spanFilter__btn">FILTRAR</button>
+				<form class="searchForm" id="searchForm">
+					<div id="searchSelect" class="hidden searchSelect">
 						<select name="selectVerb" id="selectVerb">
 							<option value="Acción...">Acción...</option>
 							<option value="Paciencia">Paciencia</option>
@@ -57,14 +58,13 @@
 						</select>
 					</div>
 					<div class="searchBtn">
-						<!-- <button>BUSCAR</button> -->
 						<button id="cleanSelect__btn">RESTABLECER</button>
 					</div>
 				</form>
 			</div>
 
-
-			</nav>
+</div>
+</header>
 		
 
 			<div class="" id="spinnerBox">
