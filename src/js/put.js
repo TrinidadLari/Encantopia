@@ -47,11 +47,41 @@ const showDetailsFaily = (hada) => {
 					<label for="nameInput">Nombre</label>
 					<input type="text" name="nameInput" id="nameInput" >
 					<label for="verbInput">Acción</label>
-					<input type="text" name="verbInput" id="verbInput" >
+					<select name="selectVerb" id="verbInput">
+							<option value="Acción...">Acción...</option>
+							<option value="Paciencia">Paciencia</option>
+							<option value="Gratitud">Gratitud</option>
+							<option value="Fluir">Fluir</option>
+							<option value="Decisión">Decisión</option>
+							<option value="Escucha">Escucha</option>
+							<option value="Disfrute">Disfrute</option>
+							<option value="Confianza">Confianza</option>
+							<option value="Silencio">Silencio</option>
+							<option value="Amor">Amor</option>
+							<option value="Quietud">Quietud</option>
+							<option value="Actuar">Actuar</option>
+						</select>
 					<label for="elementInput">Elemento</label>
-					<input type="text" name="elementInput" id="elementInput" >
+					<select name="selectElement" id="elementInput">
+							<option value="Elemento...">Elemento...</option>
+							<option value="Agua">Agua</option>
+							<option value="Tierra">Tierra</option>
+							<option value="Fuego">Fuego</option>
+							<option value="Aire">Aire</option>
+							<option value="Alma">Alma</option>
+						</select>
 					<label for="colorInput">Color</label>
-					<input type="text" name="colorInput" id="colorInput" >
+					<select name="selectColor" id="colorInput">
+							<option value="Color...">Color...</option>
+							<option value="Aguamarín">Aguamarín</option>
+							<option value="Verde">Verde</option>
+							<option value="Rosado">Rosado</option>
+							<option value="Blanco">Blanco</option>
+							<option value="Limón">Limón</option>
+							<option value="Madera">Madera</option>
+							<option value="Naranja">Naranja</option>
+							<option value="Rojo">Rojo</option>
+						</select>
 					<label for="messageInput">Mensaje</label>
           <textarea name="messageInput" id="messageInput"></textarea>
 					<button class="cardBtn__return" data-cardid="${id}">Volver</button>
@@ -64,9 +94,10 @@ const showDetailsFaily = (hada) => {
 					src="https://img.icons8.com/?size=100&id=U12vJQsF1INo&format=png&color=000000"
 					alt=""
 				/>
-				<p>Está chekeadísimo que deseas eliminar la carta para siempre?</p>
+				<p>Está chekeadísimo que desea eliminar la carta para siempre?</p>
+        <button id="cancelDelete__btn">Nooo! Cancelar!</button>
 				<button id="confirmDeleteFaily__btn" data-cardid="${id}">Eliminar por siempre</button>
-				<button id="cancelDelete__btn">Nooo! Cancelar!</button>
+				
 			</div>
 			`;
 
@@ -99,6 +130,58 @@ const showDetailsFaily = (hada) => {
 			$("#messageInput").value = hada.mensaje;
 		};
 
+
+	// Validaciones
+  const validateForm = () => {
+	let hasError = false;
+
+   const nombre = $("#nameInput").value.trim();
+  const verbo = $("#verbInput").value.trim();
+  const elemento = $("#elementInput").value.trim();
+  const color = $("#colorInput").value.trim();
+  const mensaje = $("#messageInput").value.trim();
+  const imagen = $("#imgUpload__url").value.trim();
+
+	if (!nombre) {
+		alert("El campo 'Nombre' es obligatorio.");
+		hasError = true;
+	} else if (nombre.length > 14) {
+		alert("El campo 'Nombre' no puede tener más de 14 caracteres.");
+		hasError = true;
+	}
+
+	if (!verbo) {
+		alert("El campo 'Verbo' es obligatorio.");
+		hasError = true;
+	}
+
+	if (!elemento) {
+		alert("El campo 'Elemento' es obligatorio.");
+		hasError = true;
+	}
+
+	if (!color) {
+		alert("El campo 'Color' es obligatorio.");
+		hasError = true;
+	}
+
+  	if (!mensaje) {
+		alert("El campo 'Mensaje' es obligatorio.");
+		hasError = true;
+	} else if (mensaje.length > 250) {
+		alert("El campo 'Mensaje' no puede tener más de 250 caracteres.");
+		hasError = true;
+	}
+
+	if (!imagen) {
+		alert("El campo 'Imagen' es obligatorio.");
+		hasError = true;
+	}
+
+	 return hasError;
+};
+
+
 		const confirmEditFairy = (hada) => {
 			const failyEdited = {
 				...hada,
@@ -124,10 +207,18 @@ const showDetailsFaily = (hada) => {
 				})
 				.catch((err) => alert("Ocurrió el siguiente error:" + err));
 		};
+
+
 		$("#cardEdit").addEventListener("submit", (e) => {
 			e.preventDefault();
+
+       if (validateForm()) return;
+
 			confirmEditFairy(hada);
 		});
+
+
+    //ELIMINAR
 
 		$(".cardBtn__delete").addEventListener("click", () => {
 			$("#confirmDeleteFaily__modal").classList.remove("hidden");

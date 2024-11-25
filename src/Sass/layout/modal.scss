@@ -3,7 +3,9 @@ margin-top: 100px;
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
   padding: 30px;
   background-color: rgb(255, 0, 0);
   z-index: 2;
@@ -29,5 +31,9 @@ margin-top: 100px;
   #cancelDelete__btn{
     background-color: rgb(82, 243, 82);
     color: black;
+  }
+
+  img{
+    width: 200px;
   }
 }

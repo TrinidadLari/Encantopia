@@ -35,23 +35,34 @@ cardNewFaily__form.addEventListener("submit", (e) => {
 	if (!nombre) {
 		alert("El campo 'Nombre' es obligatorio.");
 		hasError = true;
+	} else if (nombre.length > 14) {
+		alert("El campo 'Nombre' no puede tener más de 14 caracteres.");
+		hasError = true;
 	}
+
 	if (!verbo) {
 		alert("El campo 'Verbo' es obligatorio.");
 		hasError = true;
 	}
+
 	if (!elemento) {
 		alert("El campo 'Elemento' es obligatorio.");
 		hasError = true;
 	}
+
 	if (!color) {
 		alert("El campo 'Color' es obligatorio.");
 		hasError = true;
 	}
+
 	if (!mensaje) {
 		alert("El campo 'Mensaje' es obligatorio.");
 		hasError = true;
+	} else if (mensaje.length > 250) {
+		alert("El campo 'Mensaje' no puede tener más de 250 caracteres.");
+		hasError = true;
 	}
+
 	if (!imagen) {
 		alert("El campo 'Imagen' es obligatorio.");
 		hasError = true;
