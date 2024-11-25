@@ -84,9 +84,10 @@ const showDetailsFaily = (hada) => {
 						</select>
 					<label for="messageInput">Mensaje</label>
           <textarea name="messageInput" id="messageInput"></textarea>
-					<button class="cardBtn__return" data-cardid="${id}">Volver</button>
+           <button type="button" class="cardBtn__return" data-cardid="${id}">Volver</button>
 					<input type="submit" class="button" id="confirmEdit__btn" value="Editar" >
 				</form>
+       
 			</div>
 
       <div id="confirmDeleteFaily__modal" class="hidden modal">
@@ -103,16 +104,28 @@ const showDetailsFaily = (hada) => {
 
 		//funcion regresar
 
-		$(".cardBtn__return").addEventListener("click", () => {
-      document.getElementById("return__btn").classList.add("hidden");
-      document.getElementById("oracleBox__btn").classList.remove("hidden");
-      document.getElementById("addNewFaily").classList.remove("hidden");
-      document.getElementById("searchDiv").classList.remove("hidden");
+    document.querySelectorAll(".cardBtn__return").forEach((button) => {
+    button.addEventListener("click", () => {
+        document.getElementById("return__btn").classList.add("hidden");
+        document.getElementById("oracleBox__btn").classList.remove("hidden");
+        document.getElementById("addNewFaily").classList.remove("hidden");
+        document.getElementById("searchDiv").classList.remove("hidden");
+        document.getElementById("messageRandom__btn").classList.remove("hidden");
 
-			getFaily(urlApi);
-		});
+        getFaily(urlApi); // Volver a la vista principal
+    });
+});
+
 
 		$(".cardBtn__edit").addEventListener("click", () => {
+       // Ocultar menu 
+	document.getElementById("oracleBox__btn").classList.add("hidden");
+	document.getElementById("addNewFaily").classList.add("hidden");
+	document.getElementById("messageRandom__btn").classList.add("hidden");
+	document.getElementById("searchDiv").classList.add("hidden");
+
+	// Mostrar botón de volver
+	return__btn.classList.remove("hidden");
 			showCardEdit(hada);
 		});
 
