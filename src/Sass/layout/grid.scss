@@ -184,7 +184,7 @@ flex-direction: row;
 }
 
 #cardNewFaily{
-  margin-top: 290px;
+  margin-top: 190px;
   width: 70%;
   margin-inline: auto;
 }
@@ -198,7 +198,7 @@ form {
 
   
 
-	input {
+	input, select {
 		background-color: $font-color-light;
 		width: 100%;
 		height: 30px;
@@ -213,16 +213,16 @@ form {
 		@include md() {
 			
 			font-size: 16px;
-      width: 70%;
 		}
 
 		@include md-max() {
 			
 			height: 35px;
 			font-size: 20px;
-      width: 50%;
 		}
 	}
+
+ 
 	textarea {
 		background-color: $font-color-light;
 		border-radius: 3px;
@@ -236,12 +236,10 @@ form {
 
     @include md() {
 			font-size: 16px;
-      width: 70%;
 		}
 
 		@include md-max() {
 			font-size: 20px;
-      width: 50%;
 		}
 	}
 	label {
@@ -254,4 +252,21 @@ form {
 		}
 
 	}
+}
+.boxBtn__newF{
+  display: flex;
+ flex-direction: column;
+ align-items: center;
+ gap: 20px;
+
+  @include md() {
+			
+		flex-direction: row;
+     justify-content: space-between;
+		}
+
+    @include md-max() {
+			flex-direction: row;
+     justify-content: space-between;
+		}
 }

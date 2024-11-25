@@ -31,7 +31,7 @@ button,
   padding-block: 16px;
   line-height: 10px;
   cursor: pointer;
-  width: 200px;
+  width: 220px;
 }
 @media (min-width: 970px) {
   button,
@@ -48,25 +48,34 @@ button,
   }
 }
 
+.button {
+  padding-block: 0;
+}
+
 button:hover {
   opacity: 0.8;
 }
 
+#spinnerBox {
+  position: absolute;
+  top: 40%;
+  left: 40%;
+}
 @media (min-width: 970px) {
-  .cardBtnReturn__newF {
-    width: 70%;
+  #spinnerBox {
+    top: 50%;
+    left: 50%;
   }
 }
 @media (min-width: 1200px) {
-  .cardBtnReturn__newF {
-    width: 50%;
+  #spinnerBox {
+    top: 50%;
+    left: 50%;
   }
 }
 
-#spinnerBox {
-  position: absolute;
-  top: 50%;
-  left: 50%;
+#spinnerBox img {
+  width: 100px;
 }
 
 header {
@@ -351,7 +360,7 @@ header h1 {
 }
 
 #cardNewFaily {
-  margin-top: 290px;
+  margin-top: 190px;
   width: 70%;
   margin-inline: auto;
 }
@@ -363,7 +372,7 @@ form {
   padding: 20px;
   gap: 5px;
 }
-form input {
+form input, form select {
   background-color: rgb(202, 209, 192);
   width: 100%;
   height: 30px;
@@ -376,16 +385,14 @@ form input {
   font-size: 14px;
 }
 @media (min-width: 970px) {
-  form input {
+  form input, form select {
     font-size: 16px;
-    width: 70%;
   }
 }
 @media (min-width: 1200px) {
-  form input {
+  form input, form select {
     height: 35px;
     font-size: 20px;
-    width: 50%;
   }
 }
 form textarea {
@@ -402,13 +409,11 @@ form textarea {
 @media (min-width: 970px) {
   form textarea {
     font-size: 16px;
-    width: 70%;
   }
 }
 @media (min-width: 1200px) {
   form textarea {
     font-size: 20px;
-    width: 50%;
   }
 }
 form label {
@@ -418,6 +423,25 @@ form label {
 @media (min-width: 970px) {
   form label {
     font-size: 24px;
+  }
+}
+
+.boxBtn__newF {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+@media (min-width: 970px) {
+  .boxBtn__newF {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+@media (min-width: 1200px) {
+  .boxBtn__newF {
+    flex-direction: row;
+    justify-content: space-between;
   }
 }
 
@@ -444,6 +468,7 @@ body {
   flex-direction: column;
   background-color: rgb(44, 120, 101);
   min-height: 100vh;
+  justify-content: space-between;
 }
 
 .searchDiv {

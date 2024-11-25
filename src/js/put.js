@@ -71,12 +71,7 @@ const showDetailsFaily = (hada) => {
 		//funcion regresar
 
 		$(".cardBtn__return").addEventListener("click", () => {
-			// console.log("clickReturn");
-
-
       document.getElementById("return__btn").classList.add("hidden");
-
-
       document.getElementById("oracleBox__btn").classList.remove("hidden");
       document.getElementById("addNewFaily").classList.remove("hidden");
       document.getElementById("searchDiv").classList.remove("hidden");
@@ -85,7 +80,6 @@ const showDetailsFaily = (hada) => {
 		});
 
 		$(".cardBtn__edit").addEventListener("click", () => {
-			// console.log("clickEdit");
 			showCardEdit(hada);
 		});
 
@@ -156,7 +150,6 @@ const showDetailsFaily = (hada) => {
 						.json()
 						.then((data) => {
 							getFaily(urlApi);
-							// console.log(data);
 						})
 						.catch((err) => alert("Ocurrió el siguiente error:" + err))
 				);

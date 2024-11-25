@@ -86,13 +86,44 @@
 					<label for="nameInput__newF">Nombre</label>
 					<input type="text" name="nameInput__newF" id="nameInput__newF" >
 					<label for="verbInput__newF">Acción</label>
-					<input type="text" name="verbInput__newF" id="verbInput__newF" >
+          <select name="selectVerb" id="verbInput__newF">
+							<option value="Acción...">Acción...</option>
+							<option value="Paciencia">Paciencia</option>
+							<option value="Gratitud">Gratitud</option>
+							<option value="Fluir">Fluir</option>
+							<option value="Decisión">Decisión</option>
+							<option value="Escucha">Escucha</option>
+							<option value="Disfrute">Disfrute</option>
+							<option value="Confianza">Confianza</option>
+							<option value="Silencio">Silencio</option>
+							<option value="Amor">Amor</option>
+							<option value="Quietud">Quietud</option>
+							<option value="Actuar">Actuar</option>
+						</select>
 					<label for="elementInput__newF">Elemento</label>
-					<input type="text" name="elementInput__newF" id="elementInput__newF" >
+          <select name="selectElement" id="elementInput__newF">
+							<option value="Elemento...">Elemento...</option>
+							<option value="Agua">Agua</option>
+							<option value="Tierra">Tierra</option>
+							<option value="Fuego">Fuego</option>
+							<option value="Aire">Aire</option>
+							<option value="Alma">Alma</option>
+						</select>
 					<label for="colorInput__newF">Color</label>
-					<input type="text" name="colorInput__newF" id="colorInput__newF" >
+          <select name="selectColor" id="colorInput__newF">
+							<option value="Color...">Color...</option>
+							<option value="Aguamarín">Aguamarín</option>
+							<option value="Verde">Verde</option>
+							<option value="Rosado">Rosado</option>
+							<option value="Blanco">Blanco</option>
+							<option value="Limón">Limón</option>
+							<option value="Madera">Madera</option>
+							<option value="Naranja">Naranja</option>
+							<option value="Rojo">Rojo</option>
+						</select>
 					<label for="messageInput__newF">Mensaje</label>
 					<textarea name="messageInput__newF" id="messageInput__newF"></textarea>
+          <div class="boxBtn__newF">
 					<button class="cardBtnReturn__newF" data-cardid="${id}">
 						Cancelar
 					</button>
@@ -101,7 +132,7 @@
 						class="button"
 						id="confirmNewFaily__btn"
 						value="Crear"
-					>
+					></div>
 				</form>
 			</div>
 			<div id="oracleBox" class="hidden">

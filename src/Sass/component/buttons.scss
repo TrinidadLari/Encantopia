@@ -12,7 +12,7 @@ button,
 	padding-block: 16px;
 	line-height: 10px;
   cursor: pointer;
-  width: 200px;
+  width: 220px;
 
 	@include md() {
     font-size: 24;
@@ -25,16 +25,11 @@ button,
 	}
 }
 
-button:hover{
-  opacity: 0.8;
+.button{
+  	padding-block: 0;
+  
 }
 
-.cardBtnReturn__newF{
-  @include md() {
-      width: 70%;
-		}
-
-		@include md-max() {
-      width: 50%;
-		}
+button:hover{
+  opacity: 0.8;
 }

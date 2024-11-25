@@ -1,5 +1,19 @@
 #spinnerBox {
 	position: absolute;
-	top: 50%;
-	left: 50%;
+	top: 40%;
+	left: 40%;
+
+  	@include md() {
+			top: 50%;
+	    left: 50%;
+		}
+
+		@include md-max() {
+			top: 50%;
+	    left: 50%;
+		}
+}
+
+#spinnerBox img{
+    width: 100px;
 }

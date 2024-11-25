@@ -3,7 +3,6 @@ const $$ = (selector) => document.querySelectorAll(selector);
 
 const urlApi = "https://6619ec20125e9bb9f29afff2.mockapi.io/api/hadas";
 
-// console.log(urlApi);
 
 //TRAER HADAS
 const getFaily = (fetchUrl) => {
@@ -14,7 +13,7 @@ const getFaily = (fetchUrl) => {
 };
 
 getFaily(urlApi);
-// console.log(getFaily);
+
 
 //MOSTRAR HADAS
 const showFaily = (hadas) => {
@@ -43,7 +42,6 @@ const showFaily = (hadas) => {
 
 //MOSTRAR SPINNER
 const showSpinner = () => {
-	// console.log($("#spinnerBox"));
 	$("#spinnerBox").classList.remove("hidden");
 };
 
@@ -56,20 +54,33 @@ const hideSpinner = () => {
 const clickBtn__detail = (btns) => {
 	btns.forEach((btn) =>
 		btn.addEventListener("click", () => {
-			// console.log("hizo el click el detalle");
 			getFailyDetails(btn.dataset.cardid);
-			// console.log(getFailyDetails);
 		})   
 	);  
 };
 
 
-document.getElementById("spanFilter__btn").addEventListener("click", () => {
+	const menu = document.getElementById("burguerMenu");
+	const burgerBtn = document.getElementById("burgerBtn");
+	const searchSelect = document.getElementById("searchSelect");
+	const filterBtn = document.getElementById("spanFilter__btn");
 
-	document.getElementById("searchSelect").classList.toggle("hidden");
+filterBtn.addEventListener("click", () => {
+searchSelect.classList.toggle("hidden");
 });
 
-document.getElementById("burgerBtn").addEventListener("click", () => {
-
-	document.getElementById("burguerMenu").classList.toggle("hidden");
+burgerBtn.addEventListener("click", () => {
+menu.classList.toggle("hidden");
 });
+
+//cerrar menu haciendo click en la pantalla
+
+document.addEventListener("click", (e) => {
+if (!menu.classList.contains("hidden") && !menu.contains(e.target) && !burgerBtn.contains(e.target)) {
+		menu.classList.add("hidden");
+	}
+if (!searchSelect.classList.contains("hidden") && !searchSelect.contains(e.target) && !filterBtn.contains(e.target)) {
+		searchSelect.classList.add("hidden");
+	}
+});
+
