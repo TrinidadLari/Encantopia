@@ -710,6 +710,7 @@ input option {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   gap: 15px;
   background-color: rgb(155, 190, 135);
   margin-bottom: 10px;
