@@ -18,23 +18,28 @@ const showDetailsFaily = (hada) => {
 		const { nombre, id, verbo, elemento, color, imagen, mensaje } = hada;
 
 		$("#cardsBox").innerHTML = `
-        <div id="cardDetail">
-				<div class="cardImg">
-					<img src="${imagen}" alt="Imágen de Hada" class="fairyImg" />
-				</div>
-				<div id="cardText">
-					<h2 class="fairyName">${nombre}</h2>
-					<h3 class="fairyKind">${verbo}</h3>
-					<h4 class="fairyElement">${elemento} - ${color}</h4>
-					
-					
-					<p class="failySignify">${mensaje}</p>
-				</div>
-				<div id="cardBtn">
-					<button class="cardBtn__edit" data-cardid="${id}">Editar</button>
-					<button class="cardBtn__delete">Eliminar</button>
-					<button class="cardBtn__return" data-cardid="${id}">Volver</button>
-				</div>
+      <div id="cardDetail">
+       
+				  <div class="cardImg">
+				  	<img src="${imagen}" alt="Imágen de Hada" class="fairyImg" />
+				  </div>
+        <div class="cardImg-text">
+				  <div id="cardText">
+				  	<h2 class="fairyName">${nombre}</h2>
+				  	<h3 class="fairyKind">${verbo}</h3>
+				  	<h4 class="fairyElement">${elemento} - ${color}</h4>
+  
+  
+				  	<p class="failySignify">${mensaje}</p>
+          </div>
+           <div id="cardBtn">
+				  	  <button class="cardBtn__edit" data-cardid="${id}">Editar</button>
+				  	  <button class="cardBtn__delete">Eliminar</button>
+					    <button class="cardBtn__return" data-cardid="${id}">Volver</button>
+				   </div>
+				
+        </div>
+				
 
 				<form id="cardEdit" class="hidden">
 					<label for="nameInput">Nombre</label>
@@ -66,12 +71,21 @@ const showDetailsFaily = (hada) => {
 		//funcion regresar
 
 		$(".cardBtn__return").addEventListener("click", () => {
-			console.log("clickReturn");
+			// console.log("clickReturn");
+
+
+      document.getElementById("return__btn").classList.add("hidden");
+
+
+      document.getElementById("oracleBox__btn").classList.remove("hidden");
+      document.getElementById("addNewFaily").classList.remove("hidden");
+      document.getElementById("searchDiv").classList.remove("hidden");
+
 			getFaily(urlApi);
 		});
 
 		$(".cardBtn__edit").addEventListener("click", () => {
-			console.log("clickEdit");
+			// console.log("clickEdit");
 			showCardEdit(hada);
 		});
 
@@ -142,7 +156,7 @@ const showDetailsFaily = (hada) => {
 						.json()
 						.then((data) => {
 							getFaily(urlApi);
-							console.log(data);
+							// console.log(data);
 						})
 						.catch((err) => alert("Ocurrió el siguiente error:" + err))
 				);

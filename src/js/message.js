@@ -6,6 +6,14 @@ messageRandom__btn.addEventListener("click", () => {
 			const randomIndex = Math.floor(Math.random() * data.length);
 			const randomFaily = data[randomIndex];
 			showFailyRandom(randomFaily);
+
+       // Ocultar elementos
+      document.getElementById("oracleBox__btn").classList.add("hidden");
+      document.getElementById("addNewFaily").classList.add("hidden");
+      document.getElementById("searchDiv").classList.add("hidden");
+
+      // Mostrar botón de volver
+      document.getElementById("return__btn").classList.remove("hidden");
 		})
 		.catch((err) => alert("Ocurrió el siguiente error:" + err));
 });
@@ -26,3 +34,20 @@ const showFailyRandom = (hada) => {
     `;
 	clickBtn__detail($$(".cardBtn__detail"));
 };
+
+// Botón volver
+
+const resetToInitialState = () => {
+  document.getElementById("return__btn").classList.add("hidden");
+  document.getElementById("oracleBox__btn").classList.remove("hidden");
+  document.getElementById("addNewFaily").classList.remove("hidden");
+   document.getElementById("messageRandom__btn").classList.remove("hidden");
+  document.getElementById("searchDiv").classList.remove("hidden");
+   cardsBox.classList.remove("hidden"); 
+	cardNewFaily.classList.add("hidden");
+
+  getFaily(urlApi);
+};
+
+
+document.getElementById("return__btn").addEventListener("click", resetToInitialState);

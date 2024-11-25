@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" href="src/style.css" />
+		<meta charset="UTF-8" >
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" >
+		<link rel="stylesheet" href="src/style.css" >
 		<title>Encantopía</title>
 	</head>
 	<body id="bodyId">
@@ -14,13 +14,14 @@
 					<button id="messageRandom__btn">MENSAJE</button>
 					<button id="oracleBox__btn">ORÁCULO</button>
 					<button id="addNewFaily">AGREGAR HADA</button>
+          <button id="return__btn" class="hidden">VOLVER</button>
 				</div>
-			</nav>
-			<div class="searchDiv">
-				<span id="spanFilter__btn"><h3>Filtrar</h3></span>
+	<div class="searchDiv" id="searchDiv">
+    <button id="spanFilter__btn">Filtrar</button>
+				<!-- <h3 id="spanFilter__btn">Filtrar</h3> -->
 				<form class="searchForm">
 					<div id="searchSelect" class="searchSelect hidden">
-						<select name="" id="selectVerb">
+						<select name="selectVerb" id="selectVerb">
 							<option value="Acción...">Acción...</option>
 							<option value="Paciencia">Paciencia</option>
 							<option value="Gratitud">Gratitud</option>
@@ -35,7 +36,7 @@
 							<option value="Actuar">Actuar</option>
 						</select>
 
-						<select name="" id="selectElement">
+						<select name="selectElement" id="selectElement">
 							<option value="Elemento...">Elemento...</option>
 							<option value="Agua">Agua</option>
 							<option value="Tierra">Tierra</option>
@@ -43,7 +44,7 @@
 							<option value="Aire">Aire</option>
 							<option value="Alma">Alma</option>
 						</select>
-						<select name="" id="selectColor">
+						<select name="selectColor" id="selectColor">
 							<option value="Color...">Color...</option>
 							<option value="Aguamarín">Aguamarín</option>
 							<option value="Verde">Verde</option>
@@ -62,8 +63,12 @@
 				</form>
 			</div>
 
+
+			</nav>
+		
+
 			<div class="" id="spinnerBox">
-				<img src="../assets/svg/tadpole.svg" alt="Cargando" />
+				<img src="./assets/svg/tadpole.svg" alt="Cargando" >
 			</div>
 
 			<div class="cardsBox" id="cardsBox"></div>
@@ -77,17 +82,17 @@
 						class="imgUpload__url"
 						id="imgUpload__url"
 						aria-label="URL de imagen"
-					/>
+					>
 					<label for="nameInput__newF">Nombre</label>
-					<input type="text" name="" id="nameInput__newF" />
+					<input type="text" name="nameInput__newF" id="nameInput__newF" >
 					<label for="verbInput__newF">Acción</label>
-					<input type="text" name="" id="verbInput__newF" />
+					<input type="text" name="verbInput__newF" id="verbInput__newF" >
 					<label for="elementInput__newF">Elemento</label>
-					<input type="text" name="" id="elementInput__newF" />
+					<input type="text" name="elementInput__newF" id="elementInput__newF" >
 					<label for="colorInput__newF">Color</label>
-					<input type="text" name="" id="colorInput__newF" />
+					<input type="text" name="colorInput__newF" id="colorInput__newF" >
 					<label for="messageInput__newF">Mensaje</label>
-					<textarea name="" id="messageInput__newF"></textarea>
+					<textarea name="messageInput__newF" id="messageInput__newF"></textarea>
 					<button class="cardBtnReturn__newF" data-cardid="${id}">
 						Cancelar
 					</button>
@@ -96,7 +101,7 @@
 						class="button"
 						id="confirmNewFaily__btn"
 						value="Crear"
-					/>
+					>
 				</form>
 			</div>
 			<div id="oracleBox" class="hidden">
@@ -171,13 +176,13 @@
         <p>©2024 - By Trinidad Sabina Lari 🧡</p>
       </div>
     </footer>
-	</body>
 
-	<script src="src/js/main.js"></script>
-	<script src="src/js/put.js"></script>
-	<script src="src/js/post.js"></script>
-	<script src="src/js/filters.js"></script>
-	<script src="src/js/message.js"></script>
-	<script src="src/js/oracle.js"></script>
-  <script src="src/js/removehidden.js"></script>
+    <script src="src/js/main.js"></script>
+	  <script src="src/js/put.js"></script>
+	  <script src="src/js/post.js"></script>
+	  <script src="src/js/filters.js"></script>
+	  <script src="src/js/message.js"></script>
+	  <script src="src/js/oracle.js"></script>
+    <script src="src/js/removehidden.js"></script>
+	</body>	
 </html>

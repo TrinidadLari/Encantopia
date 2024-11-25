@@ -1,5 +1,6 @@
 body {
+  display: flex;
+  flex-direction: column;
 	background-color: $main-color;
-	align-items: center;
-	height: 100vh;
+	min-height: 100vh;
 }

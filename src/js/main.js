@@ -3,7 +3,7 @@ const $$ = (selector) => document.querySelectorAll(selector);
 
 const urlApi = "https://6619ec20125e9bb9f29afff2.mockapi.io/api/hadas";
 
-console.log(urlApi);
+// console.log(urlApi);
 
 //TRAER HADAS
 const getFaily = (fetchUrl) => {
@@ -14,7 +14,7 @@ const getFaily = (fetchUrl) => {
 };
 
 getFaily(urlApi);
-console.log(getFaily);
+// console.log(getFaily);
 
 //MOSTRAR HADAS
 const showFaily = (hadas) => {
@@ -43,7 +43,7 @@ const showFaily = (hadas) => {
 
 //MOSTRAR SPINNER
 const showSpinner = () => {
-	console.log($("#spinnerBox"));
+	// console.log($("#spinnerBox"));
 	$("#spinnerBox").classList.remove("hidden");
 };
 
@@ -56,15 +56,15 @@ const hideSpinner = () => {
 const clickBtn__detail = (btns) => {
 	btns.forEach((btn) =>
 		btn.addEventListener("click", () => {
-			console.log("hizo el click el detalle");
+			// console.log("hizo el click el detalle");
 			getFailyDetails(btn.dataset.cardid);
-			console.log(getFailyDetails);
+			// console.log(getFailyDetails);
 		})   
 	);  
 };
 
 
 document.getElementById("spanFilter__btn").addEventListener("click", () => {
-	console.log("Mira como te la clickeo!!");
+
 	document.getElementById("searchSelect").classList.toggle("hidden");
 });

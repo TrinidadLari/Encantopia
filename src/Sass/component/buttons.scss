@@ -1,7 +1,6 @@
 button,
 .button {
 	background-color: $secondary-color;
-	height: 30px;
 	border-radius: 6px;
 	box-shadow: $shadow-light;
 	border: none;
@@ -10,16 +9,24 @@ button,
 	font-weight: 800;
 	font-style: normal;
 	font-size: 20px;
-	padding: 8px;
+	padding-block: 16px;
 	line-height: 10px;
+  cursor: pointer;
+  width: 200px;
 
 	@include md() {
     font-size: 24;
+    width: 300px;
 	}
 
 	@include md-max() {
 		font-size: 28px;
+    width: 300px;
 	}
+}
+
+button:hover{
+  opacity: 0.8;
 }
 
 .cardBtnReturn__newF{
