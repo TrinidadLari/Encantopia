@@ -29,6 +29,11 @@
 	}
 }
 
+.oracleBox__faily{
+  align-items: center;
+  margin-inline: auto;
+}
+
 #oracleBox__carrusel {
 	min-height: 100vh;
 	width: 100%;
@@ -45,7 +50,9 @@
 }
 
 .oracle__cards {
-	display: inline-block;
+	display: flex;
+  flex-direction: column;
+
 
 
   @include md() {

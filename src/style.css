@@ -655,6 +655,11 @@ input option {
   }
 }
 
+.oracleBox__faily {
+  align-items: center;
+  margin-inline: auto;
+}
+
 #oracleBox__carrusel {
   min-height: 100vh;
   width: 100%;
@@ -671,7 +676,8 @@ input option {
 }
 
 .oracle__cards {
-  display: inline-block;
+  display: flex;
+  flex-direction: column;
 }
 @media (min-width: 970px) {
   .oracle__cards {
